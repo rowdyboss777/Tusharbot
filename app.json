@@ -7,8 +7,8 @@
         "video-extract",
         "pyrogram"
     ],
-    "repository": "https://github.com/Tushar557845/ADVANCE-TXT-UPLOADER",
-    "success_url": "https://github.com/Tushar557845/ADVANCE-TXT-UPLOADER",
+    "repository": "https://github.com/rowdyboss777/Tusharbot",
+    "success_url": "https://github.com/rowdyboss777/Tusharbot",
     "stack": "heroku-24",
     "env": {
         "API_ID": {
