@@ -1,6 +1,3 @@
-# Don't Remove Credit Tg - @Tushar0125
-# Ask Doubt on telegram @Tushar0125
-
 import os
 import re
 import sys
@@ -150,7 +147,7 @@ async def start_command(bot: Client, message: Message):
         "➽ **For Help Use Command /Help ⚔️**\n\n"
         "➽ **/e2t - Edit txt file📝**\n\n"
         "➽ **/cookies - Upload cookies file🍪**\n\n"
-        "➽ **/yt2txt - Create txt of yt playlist (owner)🗃️**\n\n"
+        "➽ **/yt2txt - Create txt of yt playlist**\n\n"
         "➽ **For Stop ⛔ working process ⇶ /stop Command**\n\n"
         "➽ **𝐔𝐬𝐞 /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n\n"
         "➽ **𝐌𝐚𝐝𝐞 𝐁𝐲: 『🌟ᏒᎧᏇᎠᎽ🌟』**"
@@ -822,13 +819,13 @@ async def upload(bot: Client, m: Message):
                     emoji_message = await show_random_emojis(message)
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
-                    Show =( f"🌟 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 = {progress:.2f}%\n\n"
-                           f"**📝 Title =** {name}\n\n"
-                           f"**📊 Total Links =** {len(links)}\n\n"
-                           f"**⚡ Currently on =** {str(count)}/{len(links)}\n\n"
-                           f"**⏳ Remaining links =** {remaining_links}\n\n"
+                    Show =( f"<pre><code> 🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒...= {progress:.2f}%</code></pre>\n\n\n"
+                           f"<pre><code> **📝 Title =** {name}</code></pre>\n\n"
+                           f"**┣📊 Total Links =** {len(links)}\n"
+                           f"**┣⚡ Currently on =** {str(count)}/{len(links)}\n"
+                           f"**┣⏳ Remaining links =** {remaining_links}\n"
                            f"**🎥 Quality =** {res}\n\n"
-                           f"**🔗 Url = 🙂 चलो फिर से अजनबी बन जायें 🙂\n\n🤖𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 ➤ 『🌟ᏒᎧᏇᎠᎽ🌟』\n\n**")
+                           f"**🔗 Url = 🙂 चलो फिर से अजनबी बन जायें 🙂\n\n**╰──────⌈🌟 ᏒᎾᏯᎠᎽ 🌟⌋──────╯**")
                     
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
                     res_file = await helper.download_video(url, cmd, name)
