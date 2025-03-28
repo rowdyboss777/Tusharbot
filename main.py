@@ -821,13 +821,13 @@ async def upload(bot: Client, m: Message):
                     remaining_links = len(links) - count
                     Show =(  f'<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒... » {progress:.2f}%</code></pre>\n\n\n'
                            f'**📝 Title =** {name}\n\n\n'
+                           f'<pre><code>**🔖 Batch Name =** `{b_name}`</code></pre>\n\n\n'
                            f'**━━━━━━━📥 𝐃𝐎𝐖𝐋𝐎𝐀𝐃𝐄𝐃 📥 ━━━━━━━**\n\n\n'
                            f'**┣📊 Total Links =** {len(links)}\n┃\n'
                            f'**┣⚡ Currently on =** {str(count)}/{len(links)}\n┃\n'
                            f'**┣⏳ Remaining links =** {remaining_links}\n┃\n'
                            f'**┣🎥 Quality =** {res}\n┃\n'
-                           f'**┣🔖 Batch Name =** `{b_name}`\n┃\n'
-                           f'**┣🌟 Credit =** {CR}\n┃\n' 
+                           f'**┣🖥️ Credit =** {CR}\n┃\n' 
                            f'**┣🔗 𝗨𝗿𝗹 =** <a href="{url}">__**Click Here to See Link**__</a>\n\n\n'
                            f'**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 =** 🌟ᏒᎾᏯᎠᎽ🌟\n\n\n\n')
                     
