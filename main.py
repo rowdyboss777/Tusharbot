@@ -826,8 +826,9 @@ async def upload(bot: Client, m: Message):
                            f'**┣⚡ Currently on =** {str(count)}/{len(links)}\n┃\n'
                            f'**┣⏳ Remaining links =** {remaining_links}\n┃\n'
                            f'**┣🎥 Quality =** {res}\n┃\n'
-                           f'**┣🖼️ Thumbnail =** <a href="{raw_text6}">__**Thumb View**__</a>\n\n'
-                           f'**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 = 🌟ᏒᎾᏯᎠᎽ🌟\n\n\n**')
+                           f'**┣🖼️ Thumbnail =** <a href="{raw_text6}">__**Thumb View**__</a>\n┃\n'
+                           f'**┣🔗 𝗨𝗿𝗹 =** <a href="{url}">__**Click Here to See Link**__</a>\n\n'
+                           f'**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 =** 🌟ᏒᎾᏯᎠᎽ🌟\n\n\n\n')
                     
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
                     res_file = await helper.download_video(url, cmd, name)
