@@ -41,9 +41,9 @@ from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 cookies_file_path = os.getenv("COOKIES_FILE_PATH", "youtube_cookies.txt")
 
-pwimg = "https://graph.org/file/8add8d382169e326f67e0-3bf38f92e52955e977.jpg"
-#ytimg = "https://graph.org/file/3aa806c302ceec62e6264-60ced740281395f68f.jpg"
-cpimg = "https://graph.org/file/5ed50675df0faf833efef-e102210eb72c1d5a17.jpg"  
+pwimg = "https://graph.org/file/82b147b13927bab3ca547-79bd007fd6d33e9224.jpg"
+#ytimg = "https://graph.org/file/82b147b13927bab3ca547-79bd007fd6d33e9224.jpg"
+cpimg = "https://graph.org/file/82b147b13927bab3ca547-79bd007fd6d33e9224.jpg"  
 
 
 async def show_random_emojis(message):
@@ -52,12 +52,12 @@ async def show_random_emojis(message):
     return emoji_message
     
 # Define the owner's user ID
-OWNER_ID = 7856557198 # Replace with the actual owner's user ID
+OWNER_ID = 7003164707  # Replace with the actual owner's user ID
 
 # List of sudo users (initially empty or pre-populated)
-SUDO_USERS = [6854709241,5840594311,7856557198]
+SUDO_USERS = [7003164707,7003164707,7003164707]
 
-AUTH_CHANNEL = -1002610058793
+AUTH_CHANNEL =  -1002582376470
 
 # Function to check if a user is authorized
 def is_authorized(user_id: int) -> bool:
@@ -105,55 +105,99 @@ async def sudo_command(bot: Client, message: Message):
     except Exception as e:
         await message.reply_text(f"**Error:** {str(e)}")
 
+import random
+
 # Inline keyboard for start command
 keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🇮🇳ʙᴏᴛ ᴍᴀᴅᴇ ʙʏ🇮🇳" ,url=f"https://t.me/Tushar0125") ],
+                    InlineKeyboardButton("Contact 🖥️ " ,url=f"https://t.me/ROWDYOFFICIALBOT") ],
                     [
-                    InlineKeyboardButton("🔔ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ🔔" ,url="https://t.me/TxtToVideoUpdateChannel") ],
+                    InlineKeyboardButton("🔔 Update channel 🔔" ,url="https://t.me/ROWDYOFFICIALBOT") ],
                     [
-                    InlineKeyboardButton("🦋ғᴏʟʟᴏᴡ ᴜs🦋" ,url="https://t.me/TxtToVideoUpdateChannel")                              
+                    InlineKeyboardButton(" Follow 🪄" ,url="https://t.me/+SuHeln3S5glkZjFl")                              
                 ],           
             ]
       )
     
 # Image URLs for the random image feature
 image_urls = [
-    "https://graph.org/file/996d4fc24564509244988-a7d93d020c96973ba8.jpg",
-    "https://graph.org/file/96d25730136a3ea7e48de-b0a87a529feb485c8f.jpg",
-    "https://graph.org/file/6593f76ddd8c735ae3ce2-ede9fa2df40079b8a0.jpg",
-    "https://graph.org/file/a5dcdc33020aa7a488590-79e02b5a397172cc35.jpg",
-    "https://graph.org/file/0346106a432049e391181-7560294e8652f9d49d.jpg",
-    "https://graph.org/file/ba49ebe9a8e387addbcdc-be34c4cd4432616699.jpg",
-    "https://graph.org/file/26f98dec8b3966687051f-557a430bf36b660e24.jpg",
-    "https://graph.org/file/2ae78907fa4bbf3160ffa-2d69cd23fa75cb0c3a.jpg",
-    "https://graph.org/file/05ef9478729f165809dd7-3df2f053d2842ed098.jpg",
-    "https://graph.org/file/b1330861fed21c4d7275c-0f95cca72c531382c1.jpg",
-    "https://graph.org/file/0ebb95807047b062e402a-9e670a0821d74e3306.jpg",
-    "https://graph.org/file/b4e5cfd4932d154ad6178-7559c5266426c0a399.jpg",
-    "https://graph.org/file/44ffab363c1a2647989bc-00e22c1e36a9fd4156.jpg",
-    "https://graph.org/file/5f0980969b54bb13f2a8a-a3e131c00c81c19582.jpg",
-    "https://graph.org/file/6341c0aa94c803f94cdb5-225b2999a89ff87e39.jpg",
-    "https://graph.org/file/90c9f79ec52e08e5a3025-f9b73e9d17f3da5040.jpg",
-    "https://graph.org/file/1aaf27a49b6bd81692064-30016c0a382f9ae22b.jpg",
-    "https://graph.org/file/702aa31236364e4ebb2be-3f88759834a4b164a0.jpg",
-    "https://graph.org/file/d0c6b9f6566a564cd7456-27fb594d26761d3dc0.jpg",
+    
+    "https://graph.org/file/82b147b13927bab3ca547-79bd007fd6d33e9224.jpg",
+    "https://graph.org/file/82b147b13927bab3ca547-79bd007fd6d33e9224.jpg",
+    "https://graph.org/file/82b147b13927bab3ca547-79bd007fd6d33e9224.jpg",
     # Add more image URLs as needed
 ]
-random_image_url = random.choice(image_urls) 
-# Caption for the image
-caption = (
-        "**ʜᴇʟʟᴏ👋**\n\n"
-        "☆ **ɪ ᴀᴍ ᴛxᴛ ᴛᴏ ᴠɪᴅᴇᴏ ᴜᴘʟᴏᴀᴅᴇʀ ʙᴏᴛ.**\n"
-        "☆ **ғᴏʀ ᴜsᴇ ᴍᴇ sᴇɴᴅ /tushar.\n"
-        "☆ **ғᴏʀ ɢᴜɪᴅᴇ sᴇɴᴅ /help."
-)
     
 # Start command handler
 @bot.on_message(filters.command(["start"]))
 async def start_command(bot: Client, message: Message):
-    await bot.send_photo(chat_id=message.chat.id, photo=random_image_url, caption=caption, reply_markup=keyboard)
+    # Send a loading message
+    loading_message = await bot.send_message(
+        chat_id=message.chat.id,
+        text="Loading... ⏳🔄"
+    )
+  
+    # Choose a random image URL
+    random_image_url = random.choice(image_urls)
+    
+    # Caption for the image
+    caption = (
+        
+        "🌟 Hello Boss 😎 {0} 🌟\n\n"
+        "➽ **I am powerful uploader bot 📥**\n\n"
+        "➽ **I Can Extract Videos & Pdf From Your Text File and Upload to Telegram**\n\n"
+        "➽ **For Help Use Command /Help ⚔️**\n\n"
+        "➽ **/e2t - Edit txt file📝**\n\n"
+        "➽ **/cookies - Upload cookies file🍪**\n\n"
+        "➽ **/yt2txt - Create txt of yt playlist (owner)🗃️**\n\n"
+        "➽ **/sudoadd - Add user or group or channel (owner)🎊**\n\n"
+        "➽ **For Stop ⛔ working process ⇶ /stop Command**\n\n"
+        "➽ **𝐔𝐬𝐞 /Rowdy Command To Download  Data From TXT File 🗃️ \n\n"
+        "➽ **𝐌𝐚𝐝𝐞 𝐁𝐲: ╰─..★.──────────╯🌟ᏒᎧᏇᎠᎽ🌟╭──────────.★..─╮**"
+    
+      )
+
+    await asyncio.sleep(1)
+    await loading_message.edit_text(
+        "Initializing Uploader bot... 🤖\n\n"
+        "Progress: ⬜⬜⬜⬜⬜⬜⬜⬜⬜ 0%\n\n"
+    )
+
+    await asyncio.sleep(1)
+    await loading_message.edit_text(
+        "Loading features... ⏳\n\n"
+        "Progress: 🟥🟥⬜⬜⬜⬜⬜⬜ 25%\n\n"
+    )
+    
+    await asyncio.sleep(1)
+    await loading_message.edit_text(
+        "This may take a moment, sit back and relax! 😊\n\n"
+        "Progress: 🟧🟧🟧🟧⬜⬜⬜⬜ 50%\n\n"
+    )
+
+    await asyncio.sleep(1)
+    await loading_message.edit_text(
+        "Checking Bot Status... 🔍\n\n"
+        "Progress: 🟨🟨🟨🟨🟨🟨⬜⬜ 75%\n\n"
+    )
+
+    await asyncio.sleep(1)
+    await loading_message.edit_text(
+        "Checking Bot Status... 🔍\n\n"
+        "Progress:🟩🟩🟩🟩🟩🟩🟩🟩🟩 100%\n\n"
+    )
+        
+    # Send the image with caption and buttons
+    await bot.send_photo(
+        chat_id=message.chat.id,
+        photo=random_image_url,
+        caption=caption.format(message.from_user.mention),
+        reply_markup=keyboard
+    )
+
+    # Delete the loading message
+    await loading_message.delete()
     
 # Stop command handler
 @bot.on_message(filters.command("stop"))
@@ -313,7 +357,7 @@ async def edit_txt(client, message: Message):
     try:
         await message.reply_document(
             document=final_file_path,
-            caption="📥**𝗘𝗱𝗶𝘁𝗲𝗱 𝗕𝘆 ➤ 𝗧𝘂𝘀𝗵𝗮𝗿**"
+            caption="📥**𝗘𝗱𝗶𝘁𝗲𝗱 𝗕𝘆 ➤  ╰─..★.──────────╯🌟ᏒᎧᏇᎠᎽ🌟╭──────────.★..─╮**"
         )
     except Exception as e:
         await message.reply_text(f"🚨 **Error**: Unable to send the file.\n\nDetails: {e}")
@@ -403,7 +447,7 @@ async def ytplaylist_to_txt(client: Client, message: Message):
         file_name = save_to_file(videos, title)
         await message.reply_document(
             document=file_name, 
-            caption=f"`{title}`\n\n📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤ 𝗧𝘂𝘀𝗵𝗮𝗿"
+            caption=f"`{title}`\n\n📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤  ╰─..★.──────────╯🌟ᏒᎧᏇᎠᎽ🌟╭──────────.★..─╮"
         )
         os.remove(file_name)
     else:
@@ -425,7 +469,7 @@ async def list_users(client: Client, msg: Message):
 async def help_command(client: Client, msg: Message):
     help_text = (
         "`/start` - Start the bot⚡\n\n"
-        "`/tushar` - Download and upload files (sudo)🎬\n\n"
+        "`/Rowdy` - Download and upload files (sudo)🎬\n\n"
         "`/restart` - Restart the bot🔮\n\n" 
         "`/stop` - Stop ongoing process🛑\n\n"
         "`/cookies` - Upload cookies file🍪\n\n"
@@ -439,13 +483,13 @@ async def help_command(client: Client, msg: Message):
     await msg.reply_text(help_text)
 
 # Upload command handler
-@bot.on_message(filters.command(["tushar"]))
+@bot.on_message(filters.command(["Rowdy"]))
 async def upload(bot: Client, m: Message):
     if not is_authorized(m.chat.id):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
         return
 
-    editable = await m.reply_text(f"⚡𝗦𝗘𝗡𝗗 𝗧𝗫𝗧 𝗙𝗜𝗟𝗘⚡")
+    editable = await m.reply_text(f"📁 𝗦𝗘𝗡𝗗 𝗧𝗫𝗧 𝗙𝗜𝗟𝗘 ")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -653,16 +697,24 @@ async def upload(bot: Client, m: Message):
             else:
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
-            try:  
+            try:
 
-                cc = f'**[🎬] 𝗩𝗶𝗱_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.({res}).𝔗𝔲𝔰𝔥𝔞𝔯.mkv\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
+
+                cc = f'**╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯**\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'
+                cc1 = f'**╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯**\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'                           
+                cczip = f'**╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯**\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'
+                cczip= f'**╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯**\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'                           
+                    
+
+                #cc = f'**[🎬] 𝗩𝗶𝗱_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.({res}).𝔗𝔲𝔰𝔥𝔞𝔯.mkv\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
                 #cpw = f'**[🎬] 𝗩𝗶𝗱_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.({res}).𝔗𝔲𝔰𝔥𝔞𝔯.mkv\n\n\n**🔗𝗩𝗶𝗱𝗲𝗼 𝗨𝗿𝗹 ➤ <a href="{url}">__**Click Here to Watch Video**__</a>**\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
                 #cyt = f'**[🎬] 𝗩𝗶𝗱_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.({res}).𝔗𝔲𝔰𝔥𝔞𝔯.mp4\n\n\n**🔗𝗩𝗶𝗱𝗲𝗼 𝗨𝗿𝗹 ➤ <a href="{url}">__**Click Here to Watch Video**__</a>**\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
-                cpvod = f'**[🎬] 𝗩𝗶𝗱_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.({res}).𝔗𝔲𝔰𝔥𝔞𝔯.mkv\n\n\n**🔗𝗩𝗶𝗱𝗲𝗼 𝗨𝗿𝗹 ➤ <a href="{url}">__**Click Here to Watch Video**__</a>**\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
-                cimg = f'**[📁] 𝗣𝗱𝗳_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.𝔗𝔲𝔰𝔥𝔞𝔯.jpg\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
-                cczip = f'**[📁] 𝗣𝗱𝗳_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.𝔗𝔲𝔰𝔥𝔞𝔯.zip\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
-                cc1 = f'**[📁] 𝗣𝗱𝗳_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.𝔗𝔲𝔰𝔥𝔞𝔯.pdf\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
+                #cpvod = f'**[🎬] 𝗩𝗶𝗱_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.({res}).𝔗𝔲𝔰𝔥𝔞𝔯.mkv\n\n\n**🔗𝗩𝗶𝗱𝗲𝗼 𝗨𝗿𝗹 ➤ <a href="{url}">__**Click Here to Watch Video**__</a>**\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
+                #cimg = f'**[📁] 𝗣𝗱𝗳_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.𝔗𝔲𝔰𝔥𝔞𝔯.jpg\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
+                #cczip = f'**[📁] 𝗣𝗱𝗳_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.𝔗𝔲𝔰𝔥𝔞𝔯.zip\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
+                #cc1 = f'**[📁] 𝗣𝗱𝗳_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.𝔗𝔲𝔰𝔥𝔞𝔯.pdf\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
           
+                
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
