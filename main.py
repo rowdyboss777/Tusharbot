@@ -153,7 +153,7 @@ async def start_command(bot: Client, message: Message):
         "➽ **/yt2txt - Create txt of yt playlist (owner)🗃️**\n\n"
         "➽ **/sudoadd - Add user or group or channel (owner)🎊**\n\n"
         "➽ **For Stop ⛔ working process ⇶ /stop Command**\n\n"
-        "➽ **𝐔𝐬𝐞 /Rowdy Command To Download  Data From TXT File 🗃️ \n\n"
+        "➽ **𝐔𝐬𝐞 /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n\n"
         "➽ **𝐌𝐚𝐝𝐞 𝐁𝐲: ╰───────╯🌟ᏒᎧᏇᎠᎽ🌟╭────────╮**"
     
       )
@@ -565,15 +565,18 @@ async def upload(bot: Client, m: Message):
     
     
 
-    await editable.edit("𝗡𝗼𝘄 𝗘𝗻𝘁𝗲𝗿 𝗔 𝗖𝗮𝗽𝘁𝗶𝗼𝗻 𝗧𝗼 𝗔𝗱𝗱 𝗖𝗮𝗽𝘁𝗶𝗼𝗻 𝗢𝗻 𝗬𝗼𝘂𝗿 𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱 𝗙𝗶𝗹𝗲\n\n𝗘𝗴 » `Tushar`")
+    await editable.edit("**Enter A Caption To Add Otherwise Send `no`\n**")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
-    highlighter  = f"️ ⁪⁬⁮⁮⁮"
-    if raw_text3 == 'Robin':
-        MR = highlighter 
+    # Default credit message
+    credit = "️ᏒᎾᏯᎠᎽ"
+    if raw_text3 == '1':
+        CR = 'ᏒᎾᏯᎠᎽ'
+    elif raw_text3:
+        CR = raw_text3
     else:
-        MR = raw_text3
+        CR = credit
    
     #await editable.edit("**𝗘𝗻𝘁𝗲𝗿 𝗣𝘄 𝗧𝗼𝗸𝗲𝗻 𝗙𝗼𝗿 𝗣𝘄 𝗨𝗽𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝗼𝗿 𝗦𝗲𝗻𝗱 `'noo'` 𝗙𝗼𝗿 𝗢𝘁𝗵𝗲𝗿𝘀**")
     #input4: Message = await bot.listen(editable.chat.id)
