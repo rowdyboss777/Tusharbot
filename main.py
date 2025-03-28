@@ -822,14 +822,15 @@ async def upload(bot: Client, m: Message):
                     emoji_message = await show_random_emojis(message)
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
-                    Show = f"🌟 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 = {progress:.2f}%\n\n"
+                    Show =( f"🌟 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 = {progress:.2f}%\n\n"
                            f"**📝 Title =** {name}\n\n"
                            f"**🔗 Links =** {len(links)}\n\n"
                            f"**📊 Total Links =** {str(count)}/{len(links)}\n\n"
                            f"**⏳ Remaining links =** {remaining_links}\n\n"
                            f"**🎥 Quality =** {res}\n\n"
-                           f"**🔗 Url = {url}\n\n🤖𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 ➤ ╰───────╯🌟ᏒᎧᏇᎠᎽ🌟╭────────╮\n\n🙂 चलो फिर से अजनबी बन जायें 🙂**"
-                    prog = await m.reply_text(Show)
+                           f"**🔗 Url = {url}\n\n🤖𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 ➤ ╰───────╯🌟ᏒᎧᏇᎠᎽ🌟╭────────╮\n\n🙂 चलो फिर से अजनबी बन जायें 🙂**")
+                    
+                    prog = await m.reply_text(Show, disable_web_page_preview=True)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
@@ -837,6 +838,7 @@ async def upload(bot: Client, m: Message):
                     await helper.send_vid(bot, m, cc, filename, thumb, name, prog)
                     count += 1
                     time.sleep(1)
+
 
             except Exception as e:
                 await m.reply_text(f'‼️𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝗙𝗮𝗶𝗹𝗲𝗱‼️\n\n'
