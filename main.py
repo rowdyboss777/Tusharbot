@@ -113,9 +113,9 @@ keyboard = InlineKeyboardMarkup(
                 [
                     InlineKeyboardButton("Contact 🖥️ " ,url=f"https://t.me/ROWDYOFFICIALBOT") ],
                     [
-                    InlineKeyboardButton("🔔 Update channel 🔔" ,url="https://t.me/ROWDYOFFICIALBOT") ],
+                    InlineKeyboardButton("🔔 Update channel 🔔" ,url="https://t.me/+SuHeln3S5glkZjFl") ],
                     [
-                    InlineKeyboardButton(" Follow 🪄" ,url="https://t.me/+SuHeln3S5glkZjFl")                              
+                    InlineKeyboardButton(" Follow 🪄" ,url="https://t.me/ROWDYOFFICIALBOT")                              
                 ],           
             ]
       )
@@ -151,10 +151,9 @@ async def start_command(bot: Client, message: Message):
         "➽ **/e2t - Edit txt file📝**\n\n"
         "➽ **/cookies - Upload cookies file🍪**\n\n"
         "➽ **/yt2txt - Create txt of yt playlist (owner)🗃️**\n\n"
-        "➽ **/sudoadd - Add user or group or channel (owner)🎊**\n\n"
         "➽ **For Stop ⛔ working process ⇶ /stop Command**\n\n"
         "➽ **𝐔𝐬𝐞 /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n\n"
-        "➽ **𝐌𝐚𝐝𝐞 𝐁𝐲: ╰───────╯🌟ᏒᎧᏇᎠᎽ🌟╭────────╮**"
+        "➽ **𝐌𝐚𝐝𝐞 𝐁𝐲: 『🌟ᏒᎧᏇᎠᎽ🌟』**"
     
       )
 
@@ -357,7 +356,7 @@ async def edit_txt(client, message: Message):
     try:
         await message.reply_document(
             document=final_file_path,
-            caption="📥**𝗘𝗱𝗶𝘁𝗲𝗱 𝗕𝘆 ➤╰───────╯🌟ᏒᎧᏇᎠᎽ🌟╭────────╮**"
+            caption="📥**𝗘𝗱𝗶𝘁𝗲𝗱 𝗕𝘆 ➤『🌟ᏒᎧᏇᎠᎽ🌟』**"
         )
     except Exception as e:
         await message.reply_text(f"🚨 **Error**: Unable to send the file.\n\nDetails: {e}")
@@ -447,7 +446,7 @@ async def ytplaylist_to_txt(client: Client, message: Message):
         file_name = save_to_file(videos, title)
         await message.reply_document(
             document=file_name, 
-            caption=f"`{title}`\n\n📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤ ╰───────╯🌟ᏒᎧᏇᎠᎽ🌟╭────────╮"
+            caption=f"`{title}`\n\n📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤ 『🌟ᏒᎧᏇᎠᎽ🌟』"
         )
         os.remove(file_name)
     else:
@@ -489,7 +488,7 @@ async def upload(bot: Client, m: Message):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
         return
 
-    editable = await m.reply_text(f"⚡𝗦𝗘𝗡𝗗 𝗧𝗫𝗧 𝗙𝗜𝗟𝗘⚡")
+    editable = await m.reply_text(f"**📁 SEND TXT FILE**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -523,7 +522,7 @@ async def upload(bot: Client, m: Message):
         os.remove(x)
         return
    
-    await editable.edit(f"`𝗧𝗼𝘁𝗮𝗹 🔗 𝗟𝗶𝗻𝗸𝘀 𝗙𝗼𝘂𝗻𝗱 𝗔𝗿𝗲 {len(links)}\n\n🔹Img : {img_count}  🔹Pdf : {pdf_count}\n🔹Zip : {zip_count}  🔹Video : {video_count}\n\n𝗦𝗲𝗻𝗱 𝗙𝗿𝗼𝗺 𝗪𝗵𝗲𝗿𝗲 𝗬𝗼𝘂 𝗪𝗮𝗻𝘁 𝗧𝗼 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱.`")
+    await editable.edit(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
@@ -531,17 +530,18 @@ async def upload(bot: Client, m: Message):
         arg = int(raw_text)
     except:
         arg = 1
-    await editable.edit("📚 𝗘𝗻𝘁𝗲𝗿 𝗬𝗼𝘂𝗿 𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 📚")
+    await editable.edit("**Enter Batch Name otherwise send `d` grabbing batch name from your file**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text
     await input1.delete(True)
-    if raw_text0 == '1':
+    if raw_text0 == 'd':
         b_name = file_name
     else:
         b_name = raw_text0
+
     
 
-    await editable.edit("**📸 𝗘𝗻𝘁𝗲𝗿 𝗥𝗲𝘀𝗼𝗹𝘂𝘁𝗶𝗼𝗻 📸**\n➤ `144`\n➤ `240`\n➤ `360`\n➤ `480`\n➤ `720`\n➤ `1080`")
+    await editable.edit("**Choose your resolution 🎥**\n➤ `144`\n➤ `240`\n➤ `360`\n➤ `480`\n➤ `720`\n➤ `1080`")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
