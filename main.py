@@ -468,7 +468,7 @@ async def list_users(client: Client, msg: Message):
 async def help_command(client: Client, msg: Message):
     help_text = (
         "`/start` - Start the bot⚡\n\n"
-        "`/tushar` - Download and upload files (sudo)🎬\n\n"
+        "`/Rowdy` - Download and upload files (sudo)🎬\n\n"
         "`/restart` - Restart the bot🔮\n\n" 
         "`/stop` - Stop ongoing process🛑\n\n"
         "`/cookies` - Upload cookies file🍪\n\n"
@@ -482,7 +482,7 @@ async def help_command(client: Client, msg: Message):
     await msg.reply_text(help_text)
 
 # Upload command handler
-@bot.on_message(filters.command(["tushar"]))
+@bot.on_message(filters.command(["Rowdy"]))
 async def upload(bot: Client, m: Message):
     if not is_authorized(m.chat.id):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
@@ -587,7 +587,7 @@ async def upload(bot: Client, m: Message):
     #else:
         #MR = raw_text4
     
-    await editable.edit("𝗡𝗼𝘄 𝗦𝗲𝗻𝗱 𝗧𝗵𝗲 𝗧𝗵𝘂𝗺𝗯 𝗨𝗿𝗹 𝗘𝗴 » https://graph.org/file/13a89d77002442255efad-989ac290c1b3f13b44.jpg\n\n𝗢𝗿 𝗜𝗳 𝗗𝗼𝗻'𝘁 𝗪𝗮𝗻𝘁 𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹 𝗦𝗲𝗻𝗱 = 𝗻𝗼")
+    await editable.edit("Now send the **Thumb url**\n**Eg :** ``\n\nor Send `no`")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -701,10 +701,10 @@ async def upload(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:
-                cc = f'**╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯**\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'
-                cc1 = f'**╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯**\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'                           
-                cczip = f'**╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯**\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'
-                cczip= f'**╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯**\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'                           
+                cc = f'╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'
+                cc1 = f'╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'                           
+                cczip = f'╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'
+                cczip= f'╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'                           
                     
                 if "drive" in url:
                     try:
@@ -824,11 +824,11 @@ async def upload(bot: Client, m: Message):
                     remaining_links = len(links) - count
                     Show =( f"🌟 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 = {progress:.2f}%\n\n"
                            f"**📝 Title =** {name}\n\n"
-                           f"**🔗 Links =** {len(links)}\n\n"
-                           f"**📊 Total Links =** {str(count)}/{len(links)}\n\n"
+                           f"**📊 Total Links =** {len(links)}\n\n"
+                           f"**⚡ Currently on =** {str(count)}/{len(links)}\n\n"
                            f"**⏳ Remaining links =** {remaining_links}\n\n"
                            f"**🎥 Quality =** {res}\n\n"
-                           f"**🔗 Url = {url}\n\n🤖𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 ➤ ╰───────╯🌟ᏒᎧᏇᎠᎽ🌟╭────────╮\n\n🙂 चलो फिर से अजनबी बन जायें 🙂**")
+                           f"**🔗 Url = 🙂 चलो फिर से अजनबी बन जायें 🙂\n\n🤖𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 ➤ 『🌟ᏒᎧᏇᎠᎽ🌟』\n\n**")
                     
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
                     res_file = await helper.download_video(url, cmd, name)
