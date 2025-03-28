@@ -819,15 +819,15 @@ async def upload(bot: Client, m: Message):
                     emoji_message = await show_random_emojis(message)
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
-                    Show =(  f"<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒... = {progress:.2f}%</code></pre>\n\n\n"
-                           f"**📝 Title =** {name}\n\n\n"
-                           f"**📥 𝐃𝐎𝐖𝐋𝐎𝐀𝐃𝐄𝐃 📥 **\n\n\n"
-                           f"**┣📊 Total Links =** {len(links)}\n┃\n"
-                           f"**┣⚡ Currently on =** {str(count)}/{len(links)}\n┃\n"
-                           f"**┣⏳ Remaining links =** {remaining_links}\n┃\n"
-                           f"**┣🎥 Quality =** {res}\n┃\n"
-                           f"**┣🖼️ Thumbnail =** <a href="{raw_text6}">__**Thumb View**__</a>\n\n"
-                           f"**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 = 🌟ᏒᎾᏯᎠᎽ🌟\n\n\n**")
+                    Show =(  f'<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒... » {progress:.2f}%</code></pre>\n\n\n'
+                           f'**📝 Title =** {name}\n\n\n'
+                           f'**📥 𝐃𝐎𝐖𝐋𝐎𝐀𝐃𝐄𝐃 📥 **\n\n\n'
+                           f'**┣📊 Total Links =** {len(links)}\n┃\n'
+                           f'**┣⚡ Currently on =** {str(count)}/{len(links)}\n┃\n'
+                           f'**┣⏳ Remaining links =** {remaining_links}\n┃\n'
+                           f'**┣🎥 Quality =** {res}\n┃\n'
+                           f'**┣🖼️ Thumbnail =** <a href="{raw_text6}">__**Thumb View**__</a>\n\n'
+                           f'**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 = 🌟ᏒᎾᏯᎠᎽ🌟\n\n\n**')
                     
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
                     res_file = await helper.download_video(url, cmd, name)
