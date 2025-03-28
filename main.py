@@ -823,12 +823,12 @@ async def upload(bot: Client, m: Message):
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
                     Show = f"🌟 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 = {progress:.2f}%\n\n"
-                           f"**📝 Title =** `{name}`\n\n"
+                           f"**📝 Title =** {name}\n\n"
                            f"**🔗 Links =** {len(links)}\n\n"
                            f"**📊 Total Links =** {str(count)}/{len(links)}\n\n"
                            f"**⏳ Remaining links =** {remaining_links}\n\n"
-                           f"**🎥 Quality =** {res}`\n\n"
-                           f"**🔗 Url = `{url}`\n\n🤖𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 ➤ ╰───────╯🌟ᏒᎧᏇᎠᎽ🌟╭────────╮\n\n🙂 चलो फिर से अजनबी बन जायें 🙂**"
+                           f"**🎥 Quality =** {res}\n\n"
+                           f"**🔗 Url = {url}\n\n🤖𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 ➤ ╰───────╯🌟ᏒᎧᏇᎠᎽ🌟╭────────╮\n\n🙂 चलो फिर से अजनबी बन जायें 🙂**"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
