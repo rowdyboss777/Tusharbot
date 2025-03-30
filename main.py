@@ -142,15 +142,15 @@ async def start_command(bot: Client, message: Message):
     caption = (
         
         "🌟 Hello Boss 😎 {0} 🌟\n\n"
-        "➽ **I am nom drm uploader bot 📥**\n\n"
-        "➽ **For Help Use Command /Help ⚔️**\n\n"
-        "➽ **/e2t - Edit txt file📝**\n\n"
-        "➽ **/t2t - Txt to Txt file📝**\n\n"
-        "➽ **/cookies - Upload cookies file🍪**\n\n"
-        "➽ **/yt2txt - Create txt of yt playlist**\n\n"
-        "➽ **For Stop ⛔ working process /stop Command**\n\n"
-        "➽ **Use /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n\n"
-        "➽ <pre><code>**MADE BY : ᏒᎧᏇᎠᎽ**</code></pre>"
+        "<pre><code>➽ **I am nom drm uploader bot 📥**</code></pre>\n\n"
+        "<pre><code>➽ **For Help Use Command /Help ⚔️**</code></pre>\n\n"
+        "<pre><code>➽ **/e2t - Edit txt file📝**</code></pre>\n\n"
+        "<pre><code>➽ **/t2t - Txt to Txt file📝**</code></pre>\n\n"
+        "<pre><code>➽ **/cookies - Upload cookies file🍪**</code></pre>\n\n"
+        "<pre><code>➽ **/yt2txt - Create txt of yt playlist**</code></pre>\n\n"
+        "<pre><code>➽ **For Stop ⛔ working process /stop Command**</code></pre>\n\n"
+        "<pre><code>➽ **Use /Rowdy Command To Download  Data From TXT File 🗃️ </code></pre>\n\n\n\n"
+        "<pre><code>➽ **MADE BY : ᏒᎧᏇᎠᎽ**</code></pre>"
     
       )
 
@@ -911,11 +911,11 @@ async def upload(bot: Client, m: Message):
                     remaining_links = len(links) - count
                     Show =(  f'<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒... » {progress:.2f}%</code></pre>\n\n\n'
                            f'**📝 Title =** {name}\n\n\n'
-                           f'<pre><code>**📊 Total Links =** {len(links)}\n\n'
-                           f'**⚡ Currently on =** {str(count)}/{len(links)}\n\n'
-                           f'**⏳ Remaining links =** {remaining_links}\n\n'
-                           f'**🎥 Quality =** {res}</code></pre>\n\n'
-                           f'**🔗 Url =** <a href="{url}">__**Click Here to See Link**__</a>\n\n\n'
+                           f'<pre><code>**📊 Total Links =** {len(links)}</code></pre>\n\n'
+                           f'<pre><code>**⚡ Currently on =** {str(count)}/{len(links)}</code></pre>\n\n'
+                           f'<pre><code>**⏳ Remaining links =** {remaining_links}</code></pre>\n\n'
+                           f'<pre><code>**🎥 Quality =** {res}</code></pre>\n\n'
+                           f'🔗 Url = <a href="{url}">__**Click Here to See Link**__</a>\n\n\n'
                            f'<pre><code>**🔖 Batch Name =** `{b_name}`</code></pre>\n\n\n'
                            f'<pre><code**BOT MADE BY =** ᏒᎾᏯᎠᎽ </code></pre>\n\n\n')
                     
