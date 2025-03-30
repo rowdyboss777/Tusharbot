@@ -44,7 +44,7 @@ cpimg = "https://graph.org/file/5ed50675df0faf833efef-e102210eb72c1d5a17.jpg"
 
 
 async def show_random_emojis(message):
-    emojis = ['🌟', '⏳', '😎', '⚡️', '🚀', '✨', '💥', '🎉', '🥂', '🍾', '🦠', '🪄', '☄️', '🕊️', '🪩', '🦚','🐅','🦁']
+    emojis = ['🪄', '⏳', '😎', '⚡️', '🚀', '✨', '💥', '🎉', '🥂', '🍾', '🦠', '🪄', '☄️', '🕊️', '🪩', '🦚','🐅','🦁']
     emoji_message = await message.reply_text(' '.join(random.choices(emojis, k=1)))
     return emoji_message
     
@@ -629,9 +629,7 @@ async def upload(bot: Client, m: Message):
         # Send a message with the batch name and pin it
         name_message = await bot.send_message(
             m.chat.id,
-            f"📌 **Batch Name Pinned!** 📌\n"
-            f"🎨 {fancy_batch_name}\n"
-            f"✨ Stay organized with your pinned batches 🚀!"
+            f"🎯 {fancy_batch_name}\n"
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
         
@@ -931,14 +929,14 @@ async def upload(bot: Client, m: Message):
                     emoji_message = await show_random_emojis(message)
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
-                    Show =(  f'<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒..... {progress:.2f}%❞</code></pre>\n\n\n'
+                    Show =(  f'<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒..... {progress:.2f}%</code></pre>\n\n\n'
                            f'**📝 Title =** {name}\n\n\n'
                            f'<pre><code>**📊 Total Links =** {len(links)}</code></pre>\n\n'
                            f'<pre><code>**⚡ Currently on =** {str(count)}/{len(links)}</code></pre>\n\n'
                            f'<pre><code>**⏳ Remaining links =** {remaining_links}</code></pre>\n\n'
                            f'<pre><code>**🎥 Quality =** {res}</code></pre>\n\n'
                            f'<pre><code>**🔖 Batch Name =** `{b_name}`</code></pre>\n\n\n'
-                           f'**╰✯━━━━━━🌟 ᏒᎾᏯᎠᎽ 🌟━━━━━✯╯**\n\n\n')
+                           f'**╰───────⌈🌟 ᏒᎾᏯᎠᎽ 🌟⌋───────╯**\n\n\n')
                     
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
                     res_file = await helper.download_video(url, cmd, name)
@@ -963,12 +961,12 @@ async def upload(bot: Client, m: Message):
     except Exception as e:
         await m.reply_text(e)
     #await m.reply_text("**🥳𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗗𝗼𝗻𝗲🥳**")
-    await m.reply_text(f"`✨𝗕𝗔𝗧𝗖𝗛 𝗦𝗨𝗠𝗠𝗔𝗥𝗬✨\n\n"
+    await m.reply_text(f"`🌟 𝗕𝗔𝗧𝗖𝗛 𝗦𝗨𝗠𝗠𝗔𝗥𝗬 🌟\n\n"
                        f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-                       f"🪄𝗜𝗻𝗱𝗲𝘅 𝗥𝗮𝗻𝗴𝗲  ({raw_text} to {len(links)})\n\n"
-                       f"🔖𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 » {b_name}\n\n"
+                       f"🔢 𝗜𝗻𝗱𝗲𝘅 𝗥𝗮𝗻𝗴𝗲 : ({raw_text} to {len(links)})\n\n"
+                       f"🔖 𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 : {b_name}\n\n"
                        f"━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-                       f"DONE BOSS 😎")
+                       f"✅ Status: Download Completed")
                     
 
 bot.run()
