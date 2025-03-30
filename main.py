@@ -222,14 +222,6 @@ def is_admin(user_id):
 async def text_to_txt(client, message: Message):
     user_id = str(message.from_user.id)
 
-    # Check if the user is a premium user
-    if not any(user[0] == user_id for user in subscription_data):
-        await message.reply_text(
-            "🚫 **You are not a premium user.**\n\n"
-            "🔑 Please contact my admin at: **@ROWDYOFFICIALBOT** for subscription details."
-        )
-        return
-
     # Inform the user to send the text data and its desired file name
     await message.reply_text(
         "🎉 **Welcome to the Text to .txt Converter!**\n\n"
