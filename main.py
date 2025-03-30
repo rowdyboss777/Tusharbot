@@ -217,6 +217,83 @@ YOUR_ADMIN_ID = 7003164707
 def is_admin(user_id):
     return user_id == YOUR_ADMIN_ID  # Fix: Removed extra underscore
 
+
+@bot.on_message(filters.command('t2t'))
+async def text_to_txt(client, message: Message):
+    user_id = str(message.from_user.id)
+    subscription_data = read_subscription_data()
+
+    # Check if the user is a premium user
+    if not any(user[0] == user_id for user in subscription_data):
+        await message.reply_text(
+            "🚫 **You are not a premium user.**\n\n"
+            "🔑 Please contact my admin at: **@ROWDYOFFICIALBOT** for subscription details."
+        )
+        return
+
+    # Inform the user to send the text data and its desired file name
+    await message.reply_text(
+        "🎉 **Welcome to the Text to .txt Converter!**\n\n"
+        "Please send the **text** you want to convert into a `.txt` file.\n\n"
+        "Afterward, provide the **file name** you prefer for the .txt file (without extension)."
+    )
+
+    try:
+        # Wait for the user to send the text data
+        input_message: Message = await bot.listen(message.chat.id)
+
+        # Ensure the message contains text
+        if not input_message.text:
+            await message.reply_text(
+                "🚨 **Error**: Please send valid text data to convert into a `.txt` file."
+            )
+            return
+
+        text_data = input_message.text.strip()
+
+        # Ask the user for the custom file name
+        await message.reply_text(
+            "🔤 **Now, please provide the file name (without extension)**\n\n"
+            "For example: **'output'** or **'document'**\n\n"
+            "If you're unsure, we'll default to 'output'."
+        )
+
+        # Wait for the custom file name input
+        file_name_input: Message = await bot.listen(message.chat.id)
+        custom_file_name = file_name_input.text.strip()
+
+        # If the user didn't provide a name, use the default one
+        if not custom_file_name:
+            custom_file_name = "output"
+
+        await file_name_input.delete(True)
+
+        # Create and save the .txt file with the custom name
+        txt_file = os.path.join("downloads", f'{custom_file_name}.txt')
+        os.makedirs(os.path.dirname(txt_file), exist_ok=True)  # Ensure the directory exists
+        with open(txt_file, 'w') as f:
+            f.write(text_data)
+
+        # Send the generated text file to the user with a pretty caption
+        await message.reply_document(
+            document=txt_file,
+            caption=f"🎉 **Here is your text file**: `{custom_file_name}.txt`\n\n"
+                    "You can now download your content! 📥"
+        )
+
+        # Remove the temporary text file after sending
+        os.remove(txt_file)
+
+    except Exception as e:
+        # In case of any error, send a generic error message
+        await message.reply_text(
+            f"🚨 **An unexpected error occurred**: {str(e)}.\nPlease try again or contact support if the issue persists."
+        )
+
+# Define paths for uploaded file and processed file
+UPLOAD_FOLDER = '/path/to/upload/folder'
+EDITED_FILE_PATH = '/path/to/save/edited_output.txt'
+
 # Stop command handler
 @bot.on_message(filters.command("stop"))
 async def restart_handler(_, m: Message):
