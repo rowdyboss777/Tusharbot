@@ -151,7 +151,7 @@ async def start_command(bot: Client, message: Message):
         "➽ **/yt2txt - Create txt of yt playlist**\n\n"
         "➽ **For Stop ⛔ working process /stop Command**\n\n"
         "➽ **Use /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n\n"
-        "<pre><code>➽ **MADE BY : ᏒᎾᏯᎠᎽ ❤️ **</code></pre>"
+        "➽ **MADE BY : ᏒᎾᏯᎠᎽ ❤️ **"
     
       )
 
