@@ -18,7 +18,7 @@
 
 ## Credit
 
-🥳 Credit Goes To [Tushar](https://t.me/Tushar0125)
+🥳 Credit Goes To [ROWDY](https://t.me/Tushar0125)
 
   
 ## 🔥 Commands
@@ -35,7 +35,4 @@
 - **`/userlist`**: 📜 list of sudo user/group/channel.
 - **`/help`**: 🎉 for help.
 
-## ✅ Pw Without Purchase Txt Extractor Bot
-
-🥳 Pw Without Purchase Txt Extractor Bot [Click Here](https://t.me/PwTxtExtractorBot)
  
