@@ -221,7 +221,6 @@ def is_admin(user_id):
 @bot.on_message(filters.command('t2t'))
 async def text_to_txt(client, message: Message):
     user_id = str(message.from_user.id)
-    subscription_data = read_subscription_data()
 
     # Check if the user is a premium user
     if not any(user[0] == user_id for user in subscription_data):
