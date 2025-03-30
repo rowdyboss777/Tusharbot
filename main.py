@@ -204,10 +204,10 @@ async def id_command(client, message: Message):
     
     # Response bhejna
     await message.reply_text(
-        f"🎉**Success!**\n\n"
-        f"**Your User 🆔 :**`{user_id}`\n\n"
-        f"🪄**This Group/Channel ID:**`{chat_id}`\n\n"
-        f"🌟**Use this ID for further requests.**"
+        f"**🎉 Success!**\n\n"
+        f"**🪪 Your User 🆔 :** `{user_id}`\n\n"
+        f"**🪄 This Group/Channel ID: **`{chat_id}`\n\n"
+        f"**✨ Use this ID for further requests**"
     )
 
 # Admin ID define karein
@@ -443,7 +443,7 @@ async def edit_txt(client, message: Message):
     try:
         await message.reply_document(
             document=final_file_path,
-            caption="📥**𝗘𝗱𝗶𝘁𝗲𝗱 𝗕𝘆 ➤『🌟ᏒᎧᏇᎠᎽ🌟』**"
+            caption="📥**𝗘𝗱𝗶𝘁𝗲𝗱 𝗕𝘆 ➤╰────⌈🌟 ᏒᎾᏯᎠᎽ 🌟⌋────╯**"
         )
     except Exception as e:
         await message.reply_text(f"🚨 **Error**: Unable to send the file.\n\nDetails: {e}")
@@ -533,7 +533,7 @@ async def ytplaylist_to_txt(client: Client, message: Message):
         file_name = save_to_file(videos, title)
         await message.reply_document(
             document=file_name, 
-            caption=f"`{title}`\n\n📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤ 『🌟ᏒᎧᏇᎠᎽ🌟』"
+            caption=f"`{title}`\n\n📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤ ╰─────⌈🌟 ᏒᎾᏯᎠᎽ 🌟⌋─────╯"
         )
         os.remove(file_name)
     else:
@@ -629,7 +629,9 @@ async def upload(bot: Client, m: Message):
         # Send a message with the batch name and pin it
         name_message = await bot.send_message(
             m.chat.id,
+            f"📌 **Batch Name Pinned!** 📌\n"
             f"🎯 {fancy_batch_name}\n"
+            f"✨ Stay organized with your pinned batches 🚀!"
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
         
