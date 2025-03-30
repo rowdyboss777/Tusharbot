@@ -108,11 +108,11 @@ import random
 keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Contact 🖥️ " ,url=f"https://t.me/ROWDYOFFICIALBOT") ],
+                    InlineKeyboardButton("Contact 📲 " ,url=f"https://t.me/ROWDYOFFICIALBOT") ],
                     [
                     InlineKeyboardButton("🔔 Update channel 🔔" ,url="https://t.me/+SuHeln3S5glkZjFl") ],
                     [
-                    InlineKeyboardButton(" Follow 🪄" ,url="https://t.me/ROWDYOFFICIALBOT")                              
+                    InlineKeyboardButton(" Owner🪄" ,url="https://t.me/ROWDYOFFICIALBOT")                              
                 ],           
             ]
       )
@@ -142,15 +142,15 @@ async def start_command(bot: Client, message: Message):
     caption = (
         
         "🌟 Hello Boss 😎 {0} 🌟\n\n"
-        "➽ **I am powerful uploader bot 📥**\n\n"
-        "➽ **I Can Extract Videos & Pdf From Your Text File and Upload to Telegram**\n\n"
+        "➽ **I am nom drm uploader bot 📥**\n\n"
         "➽ **For Help Use Command /Help ⚔️**\n\n"
         "➽ **/e2t - Edit txt file📝**\n\n"
+        "➽ **/t2t - Txt to Txt file📝**\n\n"
         "➽ **/cookies - Upload cookies file🍪**\n\n"
         "➽ **/yt2txt - Create txt of yt playlist**\n\n"
-        "➽ **For Stop ⛔ working process ⇶ /stop Command**\n\n"
-        "➽ **𝐔𝐬𝐞 /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n\n"
-        "➽ **𝐌𝐚𝐝𝐞 𝐁𝐲: 『🌟ᏒᎧᏇᎠᎽ🌟』**"
+        "➽ **For Stop ⛔ working process /stop Command**\n\n"
+        "➽ **Use /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n\n"
+        "➽ <pre><code>**MADE BY : ᏒᎧᏇᎠᎽ**</code></pre>"
     
       )
 
@@ -911,14 +911,13 @@ async def upload(bot: Client, m: Message):
                     remaining_links = len(links) - count
                     Show =(  f'<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒... » {progress:.2f}%</code></pre>\n\n\n'
                            f'**📝 Title =** {name}\n\n\n'
-                           f'**┣📊 Total Links =** {len(links)}\n┃\n'
-                           f'**┣⚡ Currently on =** {str(count)}/{len(links)}\n┃\n'
-                           f'**┣⏳ Remaining links =** {remaining_links}\n┃\n'
-                           f'**┣🎥 Quality =** {res}\n┃\n'
-                           f'**┣🖥️ Credit =** {CR}\n┃\n' 
-                           f'**┣🔗 𝗨𝗿𝗹 =** <a href="{url}">__**Click Here to See Link**__</a>\n\n\n'
+                           f'<pre><code>**📊 Total Links =** {len(links)}\n\n'
+                           f'**⚡ Currently on =** {str(count)}/{len(links)}\n\n'
+                           f'**⏳ Remaining links =** {remaining_links}\n\n'
+                           f'**🎥 Quality =** {res}</code></pre>\n\n'
+                           f'**🔗 Url =** <a href="{url}">__**Click Here to See Link**__</a>\n\n\n'
                            f'<pre><code>**🔖 Batch Name =** `{b_name}`</code></pre>\n\n\n'
-                           f'<pre><code**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 =** 🌟ᏒᎾᏯᎠᎽ🌟</code></pre>\n\n\n')
+                           f'<pre><code**BOT MADE BY =** ᏒᎾᏯᎠᎽ </code></pre>\n\n\n')
                     
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
                     res_file = await helper.download_video(url, cmd, name)
@@ -944,14 +943,14 @@ async def upload(bot: Client, m: Message):
         await m.reply_text(e)
     #await m.reply_text("**🥳𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗗𝗼𝗻𝗲🥳**")
     await m.reply_text(f"`✨𝗕𝗔𝗧𝗖𝗛 𝗦𝗨𝗠𝗠𝗔𝗥𝗬✨\n\n"
-                       f"╭━━━━━━━━━━━━━━━━━━━━━━━╮\n"
+                       f"━━━━━━━━━━━━━━━━━━━━━━━\n"
                        f"📛𝗜𝗻𝗱𝗲𝘅 𝗥𝗮𝗻𝗴𝗲  ({raw_text} to {len(links)})\n"
                        f"📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 » {b_name}\n\n"
-                       f"╰━━━━━━━━━━━━━━━━━━━━━━━╯\n"
+                       f"━━━━━━━━━━━━━━━━━━━━━━━\n"
                        f"✨𝗧𝗫𝗧 𝗦𝗨𝗠𝗠𝗔𝗥𝗬✨ : {len(links)}\n"
-                       f"╭━━━━━━━━━━━━━━━━━━━━━━━╮\n"
+                       f"━━━━━━━━━━━━━━━━━━━━━━━\n"
                        f"🔹𝗩𝗶𝗱𝗲𝗼 » {video_count}\n🔹𝗣𝗱𝗳 » {pdf_count}\n🔹𝗜𝗺𝗴 » {img_count}\n🔹𝗭𝗶𝗽 » {zip_count}\n🔹𝗙𝗮𝗶𝗹𝗲𝗱 𝗨𝗿𝗹 » {failed_count}\n\n"
-                       f"╰━━━━━━━━━━━━━━━━━━━━━━━╯\n"
+                       f"━━━━━━━━━━━━━━━━━━━━━━━\n\n\n"
                        f"𝗦𝗧𝗔𝗧𝗨𝗦 » 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗘𝗗 ✅`")
                     
 
