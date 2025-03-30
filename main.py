@@ -931,13 +931,13 @@ async def upload(bot: Client, m: Message):
                     emoji_message = await show_random_emojis(message)
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
-                    Show =(  f'<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒..... {progress:.2f}%</code></pre>\n\n\n'
+                    Show =(  f'❝<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒..... {progress:.2f}%</code></pre>❞\n\n\n'
                            f'**📝 Title =** {name}\n\n\n'
-                           f'<pre><code>**📊 Total Links =** {len(links)}</code></pre>\n\n'
-                           f'<pre><code>**⚡ Currently on =** {str(count)}/{len(links)}</code></pre>\n\n'
-                           f'<pre><code>**⏳ Remaining links =** {remaining_links}</code></pre>\n\n'
-                           f'<pre><code>**🎥 Quality =** {res}</code></pre>\n\n'
-                           f'<pre><code>**🔖 Batch Name =** `{b_name}`</code></pre>\n\n\n'
+                           f'❝<pre><code>**📊 Total Links =** {len(links)}</code></pre>❞\n\n'
+                           f'❝<pre><code>**⚡ Currently on =** {str(count)}/{len(links)}</code></pre>❞\n\n'
+                           f'❝<pre><code>**⏳ Remaining links =** {remaining_links}</code></pre>❞\n\n'
+                           f'❝<pre><code>**🎥 Quality =** {res}</code></pre>❞\n\n'
+                           f'❝<pre><code>**🔖 Batch Name =** `{b_name}`</code></pre>❞\n\n\n'
                            f'**╰✯━━━━━━🌟 ᏒᎾᏯᎠᎽ 🌟━━━━━✯╯**\n\n\n')
                     
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
@@ -965,9 +965,9 @@ async def upload(bot: Client, m: Message):
     #await m.reply_text("**🥳𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗗𝗼𝗻𝗲🥳**")
     await m.reply_text(f"`✨𝗕𝗔𝗧𝗖𝗛 𝗦𝗨𝗠𝗠𝗔𝗥𝗬✨\n\n"
                        f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-                       f"🪄𝗜𝗻𝗱𝗲𝘅 𝗥𝗮𝗻𝗴𝗲  ({raw_text} to {len(links)})\n"
-                       f"🔖𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 » {b_name}\n"
-                       f"━━━━━━━━━━━━━━━━━━━━━━━\n"
+                       f"🪄𝗜𝗻𝗱𝗲𝘅 𝗥𝗮𝗻𝗴𝗲  ({raw_text} to {len(links)})\n\n"
+                       f"🔖𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 » {b_name}\n\n"
+                       f"━━━━━━━━━━━━━━━━━━━━━━━\n\n"
                        f"DONE BOSS 😎")
                     
 
