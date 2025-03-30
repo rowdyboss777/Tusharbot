@@ -22,6 +22,7 @@ from yt_dlp import YoutubeDL
 import yt_dlp as youtube_dl
 import cloudscraper
 import m3u8
+from var import SUDO_USERS
 import core as helper
 from utils import progress_bar
 from vars import API_ID, API_HASH, BOT_TOKEN
