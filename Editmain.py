@@ -143,14 +143,14 @@ async def start_command(bot: Client, message: Message):
         
         "🌟 Hello Boss 😎 {0} 🌟\n\n"
         "➽ **I am nom drm uploader bot 📥**\n\n"
-        "➽ **For Help Use Command /Help ⚔️**\n\n"
+        "➽ **/Help ⚔️For Help Use Command**\n\n"
         "➽ **/e2t - Edit txt file📝**\n\n"
         "➽ **/t2t - Txt to Txt file📝**\n\n"
         "➽ **/cookies - Upload cookies file🍪**\n\n"
-        "➽ **/yt2txt - Create txt of yt playlist**\n\n"
-        "➽ **For Stop ⛔ working process /stop Command**\n\n"
-        "➽ **Use /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n\n"
-        "<pre><code>➽ **MADE BY : ᏒᎾᏯᎠᎽ ❤️ **</code></pre>"
+        "➽ **/y2t - Create txt of yt playlist**\n\n"
+        "➽ **/stop working process Command**\n\n"
+        "➽ **Use /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n"
+        "➽ **MADE BY : ᏒᎾᏯᎠᎽ ❤️ **"
     
       )
 
@@ -509,7 +509,7 @@ def save_to_file(videos, name):
 
 # --- Bot Command ---
 
-@bot.on_message(filters.command('yt2txt'))
+@bot.on_message(filters.command('y2t'))
 async def ytplaylist_to_txt(client: Client, message: Message):
     """
     Handles the extraction of YouTube playlist/channel videos and sends a .txt file.
@@ -560,7 +560,7 @@ async def help_command(client: Client, msg: Message):
         "`/stop` - Stop ongoing process🛑\n\n"
         "`/cookies` - Upload cookies file🍪\n\n"
         "`/e2t` - Edit txt file📝\n\n"
-        "`/yt2txt` - Create txt of yt playlist (owner)🗃️\n\n"
+        "`/y2t` - Create txt of yt playlist (owner)🗃️\n\n"
         "`/sudoadd` - Add user or group or channel (owner)🎊\n\n"
         "`/sudoremove` - Remove user or group or channel (owner)❌\n\n"
         "`/userlist` - List of sudo user or group or channel📜\n\n"
@@ -943,14 +943,10 @@ async def upload(bot: Client, m: Message):
     #await m.reply_text("**🥳𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗗𝗼𝗻𝗲🥳**")
     await m.reply_text(f"`✨𝗕𝗔𝗧𝗖𝗛 𝗦𝗨𝗠𝗠𝗔𝗥𝗬✨\n\n"
                        f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-                       f"📛𝗜𝗻𝗱𝗲𝘅 𝗥𝗮𝗻𝗴𝗲  ({raw_text} to {len(links)})\n"
-                       f"📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 » {b_name}\n\n"
+                       f"🪄𝗜𝗻𝗱𝗲𝘅 𝗥𝗮𝗻𝗴𝗲  ({raw_text} to {len(links)})\n"
+                       f"🔖𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 » {b_name}\n"
                        f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-                       f"✨𝗧𝗫𝗧 𝗦𝗨𝗠𝗠𝗔𝗥𝗬✨ : {len(links)}\n"
-                       f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-                       f"🔹𝗩𝗶𝗱𝗲𝗼 » {video_count}\n🔹𝗣𝗱𝗳 » {pdf_count}\n🔹𝗜𝗺𝗴 » {img_count}\n🔹𝗭𝗶𝗽 » {zip_count}\n🔹𝗙𝗮𝗶𝗹𝗲𝗱 𝗨𝗿𝗹 » {failed_count}\n\n"
-                       f"━━━━━━━━━━━━━━━━━━━━━━━\n\n\n"
-                       f"𝗦𝗧𝗔𝗧𝗨𝗦 » 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗘𝗗 ✅`")
+                       f"DONE BOSS 😎")
                     
 
 bot.run()
