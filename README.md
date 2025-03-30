@@ -18,7 +18,7 @@
 
 ## Credit
 
-🥳 Credit Goes To [ROWDY](https://t.me/Tushar0125)
+🥳 Credit Goes To [ROWDY](https://t.me/ROWDYOFFICIALBOT)
 
   
 ## 🔥 Commands
