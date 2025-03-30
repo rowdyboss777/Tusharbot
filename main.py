@@ -931,13 +931,13 @@ async def upload(bot: Client, m: Message):
                     emoji_message = await show_random_emojis(message)
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
-                    Show =(  f'❝<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒..... {progress:.2f}%</code></pre>❞\n\n\n'
+                    Show =(  f'<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒..... {progress:.2f}%❞</code></pre>\n\n\n'
                            f'**📝 Title =** {name}\n\n\n'
-                           f'❝<pre><code>**📊 Total Links =** {len(links)}</code></pre>❞\n\n'
-                           f'❝<pre><code>**⚡ Currently on =** {str(count)}/{len(links)}</code></pre>❞\n\n'
-                           f'❝<pre><code>**⏳ Remaining links =** {remaining_links}</code></pre>❞\n\n'
-                           f'❝<pre><code>**🎥 Quality =** {res}</code></pre>❞\n\n'
-                           f'❝<pre><code>**🔖 Batch Name =** `{b_name}`</code></pre>❞\n\n\n'
+                           f'<pre><code>**📊 Total Links =** {len(links)}</code></pre>\n\n'
+                           f'<pre><code>**⚡ Currently on =** {str(count)}/{len(links)}</code></pre>\n\n'
+                           f'<pre><code>**⏳ Remaining links =** {remaining_links}</code></pre>\n\n'
+                           f'<pre><code>**🎥 Quality =** {res}</code></pre>\n\n'
+                           f'<pre><code>**🔖 Batch Name =** `{b_name}`</code></pre>\n\n\n'
                            f'**╰✯━━━━━━🌟 ᏒᎾᏯᎠᎽ 🌟━━━━━✯╯**\n\n\n')
                     
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
