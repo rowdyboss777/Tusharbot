@@ -195,6 +195,27 @@ async def start_command(bot: Client, message: Message):
     # Delete the loading message
     await loading_message.delete()
 
+# /id Command
+@bot.on_message(filters.command("id"))
+async def id_command(client, message: Message):
+    # Since the message is guaranteed to be from a group/channel, get the chat ID
+    chat_id = message.chat.id
+
+    # Return the chat ID with -100 prefix for groups/channels
+    await message.reply_text(
+        f"🎉 **Success!**\n\n"
+        f"🆔 **This Group/Channel ID:**\n`{user_id}`\n\n"
+        f"📌 **Use this ID for further requests.**\n\n"
+        f"To link this group/channel, use the following command:\n"
+        f"`/adduser {user_id}`"
+    )
+
+YOUR_ADMIN_ID = 7003164707
+
+# Helper function to check admin privilege
+def is_admin(user_id):
+    return user_id == YOUR_ADMIN_ID
+
 # Stop command handler
 @bot.on_message(filters.command("stop"))
 async def restart_handler(_, m: Message):
