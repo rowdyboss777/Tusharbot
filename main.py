@@ -198,8 +198,8 @@ async def start_command(bot: Client, message: Message):
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 BUTTONS = InlineKeyboardMarkup([
-    [InlineKeyboardButton("Start", callback_data="start")],
-    [InlineKeyboardButton("Help", callback_data="help")]
+    [InlineKeyboardButton("Contact", callback_data="[ᏒᎾᏯᎠᎽ](t.me/buddy_013)")],
+    [InlineKeyboardButton("Owner", callback_data="[ᏒᎾᏯᎠᎽ](t.me/buddy_013)")]
 ])
 
 #=================== TELEGRAM ID INFORMATION =============
@@ -207,7 +207,7 @@ BUTTONS = InlineKeyboardMarkup([
 @bot.on_message(filters.private & filters.command("info"))
 async def info(bot: Client, update: Message):
     
-    text = f"""--**Information**--
+    text = f"""--**✨ Information**--
 
 **🙋🏻‍♂️ First Name :** {update.from_user.first_name}
 **🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
