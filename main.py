@@ -70,7 +70,7 @@ bot = Client(
 @bot.on_message(filters.command("sudo"))
 async def sudo_command(bot: Client, message: Message):
     user_id = message.chat.id
-    if user_id != OWNER_ID:
+    if user_id != OWNER_ID: 7003164707
         await message.reply_text("**🚫 You are not authorized to use this command.**")
         return
 
@@ -98,7 +98,7 @@ async def sudo_command(bot: Client, message: Message):
             else:
                 await message.reply_text(f"**⚠️ User {target_user_id} is not in the sudo list.**")
         else:
-            await message.reply_text("**Usage:** `/sudo add <user_id>` or `/sudo remove <user_id>`")
+            await message.reply_text("**Usage:** `/sudoadd <user_id>` or `/sudoremove <user_id>`")
     except Exception as e:
         await message.reply_text(f"**Error:** {str(e)}")
 
