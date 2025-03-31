@@ -935,7 +935,7 @@ async def upload(bot: Client, m: Message):
                 
                 elif ".zip" in url:
                     try:
-                        cmd = f'yt-dlp -o "{name}.zip" "{url}"'
+                        cmd = f'yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]" -o "{name}.mp4" "{url}"'
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=m.chat.id, document=f'{name}.zip', caption=cczip)
