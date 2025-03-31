@@ -194,28 +194,77 @@ async def start_command(bot: Client, message: Message):
 
     # Delete the loading message
     await loading_message.delete()
+
+
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+BUTTONS = InlineKeyboardMarkup([
+    [InlineKeyboardButton("Contact", url="https://t.me/buddy_013")],
+   
+    [InlineKeyboardButton("Owner", url="https://t.me/buddy_013")],
+])
+
+#=================== TELEGRAM ID INFORMATION =============
+
+@bot.on_message(filters.private & filters.command("info"))
+async def info(bot: Client, update: Message):
     
-# /id Command
-@bot.on_message(filters.command("id"))
-async def id_command(client, message: Message):
-    # User ID lena
-    user_id = message.from_user.id  
-    chat_id = message.chat.id  
+    text = f"""--**✨ Information**--
+
+**🙋🏻‍♂️ First Name :** {update.from_user.first_name}
+**🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
+**🧑🏻‍🎓 Your Username :** {update.from_user.username}
+**🆔 Your Telegram ID :** {update.from_user.id}
+**🔗 Your Profile Link :** {update.from_user.mention}"""
     
-    # Response bhejna
-    await message.reply_text(
-        f"**🎉 Success!**\n\n"
-        f"**🪪 Your User 🆔 :** `{user_id}`\n\n"
-        f"**🪄 This Group/Channel ID: **`{chat_id}`\n\n"
-        f"**✨ Use this ID for further requests**"
+    await update.reply_text(        
+        text=text,
+        disable_web_page_preview=True,
+        reply_markup=BUTTONS
     )
 
-# Admin ID define karein
-YOUR_ADMIN_ID = 7003164707
 
-# Helper function to check admin privilege
-def is_admin(user_id):
-    return user_id == YOUR_ADMIN_ID  # Fix: Removed extra underscore
+@bot.on_message(filters.private & filters.command("id"))
+async def id(bot: Client, update: Message):
+    if update.chat.type == "channel":
+        await update.reply_text(
+            text=f"**This Channel's ID:** {update.chat.id}",
+            disable_web_page_preview=True
+        )
+    else:
+        await update.reply_text(        
+            text=f"**Your Telegram ID :** {update.from_user.id}",
+            disable_web_page_preview=True,
+            reply_markup=BUTTONS
+        )  
+
+# Command to get user ID
+@bot.on_message(filters.private & filters.command("id"))
+async def user_id(bot: Client, update: Message):
+    user = update.from_user
+    text = f"""--**User Information**--
+
+🙋 **User Name :** {user.first_name}
+🆔 **User ID :** `{user.id}`
+🔗 **Profile Link :** {user.mention}"""
+    
+    await update.reply_text(text, disable_web_page_preview=True, reply_markup=BUTTONS)
+
+# Callback handler for button
+@bot.on_callback_query()
+async def callback_handler(bot: Client, query):
+    if query.data == "bot_id":
+        bot_user = await bot.get_me()
+        await query.message.edit_text(
+            f"🤖 **Bot ID:** `{bot_user.id}`",
+            reply_markup=BUTTONS
+        )
+    elif query.data == "user_id":
+        user = query.from_user
+        await query.message.edit_text(
+            f"🙋 **User ID:** `{user.id}`",
+            reply_markup=BUTTONS
+        ) 
 
 
 @bot.on_message(filters.command('t2t'))
