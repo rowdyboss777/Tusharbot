@@ -195,6 +195,12 @@ async def start_command(bot: Client, message: Message):
     # Delete the loading message
     await loading_message.delete()
     
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+BUTTONS = InlineKeyboardMarkup([
+    [InlineKeyboardButton("Start", callback_data="start")],
+    [InlineKeyboardButton("Help", callback_data="help")]
+])
 
 #=================== TELEGRAM ID INFORMATION =============
 
