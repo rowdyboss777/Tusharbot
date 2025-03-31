@@ -195,28 +195,40 @@ async def start_command(bot: Client, message: Message):
     # Delete the loading message
     await loading_message.delete()
     
-# /id Command
-@bot.on_message(filters.command("id"))
-async def id_command(client, message: Message):
-    # User ID lena
-    user_id = message.from_user.id  
-    chat_id = message.chat.id  
+
+#=================== TELEGRAM ID INFORMATION =============
+
+@bot.on_message(filters.private & filters.command("info"))
+async def info(bot: Client, update: Message):
     
-    # Response bhejna
-    await message.reply_text(
-        f"**🎉 Success!**\n\n"
-        f"**🪪 Your User 🆔 :** `{user_id}`\n\n"
-        f"**🪄 This Group/Channel ID: **`{chat_id}`\n\n"
-        f"**✨ Use this ID for further requests**"
+    text = f"""--**Information**--
+
+**🙋🏻‍♂️ First Name :** {update.from_user.first_name}
+**🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
+**🧑🏻‍🎓 Your Username :** {update.from_user.username}
+**🆔 Your Telegram ID :** {update.from_user.id}
+**🔗 Your Profile Link :** {update.from_user.mention}"""
+    
+    await update.reply_text(        
+        text=text,
+        disable_web_page_preview=True,
+        reply_markup=BUTTONS
     )
 
-# Admin ID define karein
-YOUR_ADMIN_ID = 7003164707
 
-# Helper function to check admin privilege
-def is_admin(user_id):
-    return user_id == YOUR_ADMIN_ID  # Fix: Removed extra underscore
-
+@bot.on_message(filters.private & filters.command("id"))
+async def id(bot: Client, update: Message):
+    if update.chat.type == "channel":
+        await update.reply_text(
+            text=f"**This Channel's ID:** {update.chat.id}",
+            disable_web_page_preview=True
+        )
+    else:
+        await update.reply_text(        
+            text=f"**Your Telegram ID :** {update.from_user.id}",
+            disable_web_page_preview=True,
+            reply_markup=BUTTONS
+        )  
 
 @bot.on_message(filters.command('t2t'))
 async def text_to_txt(client, message: Message):
