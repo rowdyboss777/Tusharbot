@@ -195,28 +195,40 @@ async def start_command(bot: Client, message: Message):
     # Delete the loading message
     await loading_message.delete()
     
-# /id Command
-@bot.on_message(filters.command("id"))
-async def id_command(client, message: Message):
-    # User ID lena
-    user_id = message.from_user.id  
-    chat_id = message.chat.id  
+
+#=================== TELEGRAM ID INFORMATION =============
+
+@bot.on_message(filters.private & filters.command("info"))
+async def info(bot: Client, update: Message):
     
-    # Response bhejna
-    await message.reply_text(
-        f"**🎉 Success!**\n\n"
-        f"**🪪 Your User 🆔 :** `{user_id}`\n\n"
-        f"**🪄 This Group/Channel ID: **`{chat_id}`\n\n"
-        f"**✨ Use this ID for further requests**"
+    text = f"""--**Information**--
+
+**🙋🏻‍♂️ First Name :** {update.from_user.first_name}
+**🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
+**🧑🏻‍🎓 Your Username :** {update.from_user.username}
+**🆔 Your Telegram ID :** {update.from_user.id}
+**🔗 Your Profile Link :** {update.from_user.mention}"""
+    
+    await update.reply_text(        
+        text=text,
+        disable_web_page_preview=True,
+        reply_markup=BUTTONS
     )
 
-# Admin ID define karein
-YOUR_ADMIN_ID = 7003164707
 
-# Helper function to check admin privilege
-def is_admin(user_id):
-    return user_id == YOUR_ADMIN_ID  # Fix: Removed extra underscore
-
+@bot.on_message(filters.private & filters.command("id"))
+async def id(bot: Client, update: Message):
+    if update.chat.type == "channel":
+        await update.reply_text(
+            text=f"**This Channel's ID:** {update.chat.id}",
+            disable_web_page_preview=True
+        )
+    else:
+        await update.reply_text(        
+            text=f"**Your Telegram ID :** {update.from_user.id}",
+            disable_web_page_preview=True,
+            reply_markup=BUTTONS
+        )  
 
 @bot.on_message(filters.command('t2t'))
 async def text_to_txt(client, message: Message):
@@ -575,7 +587,7 @@ async def upload(bot: Client, m: Message):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
         return
 
-    editable = await m.reply_text(f"**📁 SEND TXT FILE**")
+    editable = await m.reply_text(f"Send Txt file 🗃️")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -608,7 +620,7 @@ async def upload(bot: Client, m: Message):
         await m.reply_text("😶𝗜𝗻𝘃𝗮𝗹𝗶𝗱 𝗙𝗶𝗹𝗲 𝗜𝗻𝗽𝘂𝘁😶")
         os.remove(x)
         return
-   
+        
     await editable.edit(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
@@ -618,26 +630,6 @@ async def upload(bot: Client, m: Message):
     except:
         arg = 1
 
-# If the input is "1", proceed with batch naming and notifications
-    if raw_text == "1":
-        # Extract the file name without extension
-        file_name_without_ext = os.path.splitext(file_name)[0]
-        
-        # Create a fancy batch name
-        fancy_batch_name = f"𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞: 𝗤𝘂𝗮𝗹𝗶𝘁𝘆".replace("𝗤𝘂𝗮𝗹𝗶𝘁𝘆", file_name_without_ext)
-        
-        # Send a message with the batch name and pin it
-        name_message = await bot.send_message(
-            m.chat.id,
-            f"📌 **Batch Name Pinned!** 📌\n"
-            f"🎯 {fancy_batch_name}\n"
-            f"✨ Stay organized with your pinned batches 🚀!"
-        )
-        await bot.pin_chat_message(m.chat.id, name_message.id)
-        
-        # Wait for 2 seconds before proceeding
-        await asyncio.sleep(2)
-        
 
     await editable.edit("**Enter Batch Name otherwise send `d` grabbing batch name from your file**")
     input1: Message = await bot.listen(editable.chat.id)
@@ -647,8 +639,6 @@ async def upload(bot: Client, m: Message):
         b_name = file_name
     else:
         b_name = raw_text0
-
-    
 
     await editable.edit("**Choose your resolution 🎥**\n➤ `144`\n➤ `240`\n➤ `360`\n➤ `480`\n➤ `720`\n➤ `1080`")
     input2: Message = await bot.listen(editable.chat.id)
