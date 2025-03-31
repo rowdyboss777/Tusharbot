@@ -70,7 +70,7 @@ bot = Client(
 @bot.on_message(filters.command("sudo"))
 async def sudo_command(bot: Client, message: Message):
     user_id = message.chat.id
-    if user_id != OWNER_ID: 7003164707
+    if user_id != OWNER_ID:
         await message.reply_text("**🚫 You are not authorized to use this command.**")
         return
 
