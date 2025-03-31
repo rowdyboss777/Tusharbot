@@ -575,37 +575,26 @@ async def upload(bot: Client, m: Message):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
         return
 
-    editable = await m.reply_text(f"**📁 SEND TXT FILE**")
+@bot.on_message(filters.command(["Rowdy"]) )
+async def txt_handler(bot: Client, m: Message):
+    editable = await m.reply_text(f"**Send your txt file 🗃️**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
+    await bot.send_document(OWNER, x)
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))
-    pdf_count = 0
-    img_count = 0
-    zip_count = 0
-    video_count = 0
-    
+    credit = f"ROWDY"
+    token = f"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzYxNTE3MzAuMTI2LCJkYXRhIjp7Il9pZCI6IjYzMDRjMmY3Yzc5NjBlMDAxODAwNDQ4NyIsInVzZXJuYW1lIjoiNzc2MTAxNzc3MCIsImZpcnN0TmFtZSI6IkplZXYgbmFyYXlhbiIsImxhc3ROYW1lIjoic2FoIiwib3JnYW5pemF0aW9uIjp7Il9pZCI6IjVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OSIsIndlYnNpdGUiOiJwaHlzaWNzd2FsbGFoLmNvbSIsIm5hbWUiOiJQaHlzaWNzd2FsbGFoIn0sImVtYWlsIjoiV1dXLkpFRVZOQVJBWUFOU0FIQEdNQUlMLkNPTSIsInJvbGVzIjpbIjViMjdiZDk2NTg0MmY5NTBhNzc4YzZlZiJdLCJjb3VudHJ5R3JvdXAiOiJJTiIsInR5cGUiOiJVU0VSIn0sImlhdCI6MTczNTU0NjkzMH0.iImf90mFu_cI-xINBv4t0jVz-rWK1zeXOIwIFvkrS0M"
     try:    
         with open(x, "r") as f:
             content = f.read()
         content = content.split("\n")
-        
         links = []
         for i in content:
-            if "://" in i:
-                url = i.split("://", 1)[1]
-                links.append(i.split("://", 1))
-                if ".pdf" in url:
-                    pdf_count += 1
-                elif url.endswith((".png", ".jpeg", ".jpg")):
-                    img_count += 1
-                elif ".zip" in url:
-                    zip_count += 1
-                else:
-                    video_count += 1
+            links.append(i.split("://", 1))
         os.remove(x)
     except:
-        await m.reply_text("😶𝗜𝗻𝘃𝗮𝗹𝗶𝗱 𝗙𝗶𝗹𝗲 𝗜𝗻𝗽𝘂𝘁😶")
+        await m.reply_text("Invalid file input.")
         os.remove(x)
         return
    
@@ -618,26 +607,6 @@ async def upload(bot: Client, m: Message):
     except:
         arg = 1
 
-# If the input is "1", proceed with batch naming and notifications
-    if raw_text == "1":
-        # Extract the file name without extension
-        file_name_without_ext = os.path.splitext(file_name)[0]
-        
-        # Create a fancy batch name
-        fancy_batch_name = f"𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞: 𝗤𝘂𝗮𝗹𝗶𝘁𝘆".replace("𝗤𝘂𝗮𝗹𝗶𝘁𝘆", file_name_without_ext)
-        
-        # Send a message with the batch name and pin it
-        name_message = await bot.send_message(
-            m.chat.id,
-            f"📌 **Batch Name Pinned!** 📌\n"
-            f"🎯 {fancy_batch_name}\n"
-            f"✨ Stay organized with your pinned batches 🚀!"
-        )
-        await bot.pin_chat_message(m.chat.id, name_message.id)
-        
-        # Wait for 2 seconds before proceeding
-        await asyncio.sleep(2)
-        
 
     await editable.edit("**Enter Batch Name otherwise send `d` grabbing batch name from your file**")
     input1: Message = await bot.listen(editable.chat.id)
@@ -647,8 +616,6 @@ async def upload(bot: Client, m: Message):
         b_name = file_name
     else:
         b_name = raw_text0
-
-    
 
     await editable.edit("**Choose your resolution 🎥**\n➤ `144`\n➤ `240`\n➤ `360`\n➤ `480`\n➤ `720`\n➤ `1080`")
     input2: Message = await bot.listen(editable.chat.id)
