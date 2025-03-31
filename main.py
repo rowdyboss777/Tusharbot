@@ -931,6 +931,7 @@ async def upload(bot: Client, m: Message):
                            f'**📤 𝐔𝐏𝐋𝐎𝐀𝐃𝐈𝐍𝐆! 📤**\n\n'
                            f'<pre><code>**🔖 Batch Name =** `{b_name}` (ᏒᎾᏯᎠᎽ) 🦁</code></pre>\n\n\n'
                            f'**⏳ Uploading Your videos may take some time**\n\n'
+                           f'**╭────────◆◇◆────────╮\n MADE BY : [ᏒᎾᏯᎠᎽ](t.me/buddy_013)\n╰────────◆◇◆────────╯**\n\n\n)
                            
                            
                     
