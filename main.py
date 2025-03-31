@@ -52,7 +52,7 @@ async def show_random_emojis(message):
 OWNER_ID = 7003164707 # Replace with the actual owner's user ID
 
 # List of sudo users (initially empty or pre-populated)
-SUDO_USERS = [7003164707,6944575867]
+SUDO_USERS = [7003164707]
 
 AUTH_CHANNEL = -1002569058515
 
@@ -150,7 +150,7 @@ async def start_command(bot: Client, message: Message):
         "➽ **/y2t - Create txt of yt playlist**\n\n"
         "➽ **/stop working process Command**\n\n"
         "➽ **Use /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n"
-        "➽ **MADE BY :'[ᏒᎾᏯᎠᎽ](t.me/buddy_013)'"
+        "╭────────◆◇◆────────╮MADE BY : [ᏒᎾᏯᎠᎽ](t.me/buddy_013)╰────────◆◇◆────────╯\n\n"
     
       )
 
@@ -924,14 +924,14 @@ async def upload(bot: Client, m: Message):
                     emoji_message = await show_random_emojis(message)
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
-                    Show =(  f'<pre><code>🪩 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒..... {progress:.2f}%</code></pre>\n\n\n'
+                    Show =(  f'<pre><code>🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀{progress:.2f}%</code></pre>\n\n\n'
                            f'**📝 Title =** {name}\n\n\n'
-                           f'<pre><code>**📊 Total Links =** {len(links)}</code></pre>\n\n'
-                           f'<pre><code>**⚡ Currently on =** {str(count)}/{len(links)}</code></pre>\n\n'
-                           f'<pre><code>**⏳ Remaining links =** {remaining_links}</code></pre>\n\n'
-                           f'<pre><code>**🎥 Quality =** {res}</code></pre>\n\n'
-                           f'<pre><code>**🔖 Batch Name =** `{b_name}`</code></pre>\n\n\n'
-                           f'**╰───────⌈🌟 ᏒᎾᏯᎠᎽ 🌟⌋───────╯**\n\n\n')
+                           f'**┠📊 Total Links =** {len(links)}\n┃\n'
+                           f'**┠⚡ Currently on =** {str(count)}/{len(links)}\n┃\n'
+                           f'**┠⏳ Remaining links =** {remaining_links}\n┃\n'
+                           f'**📤 𝐔𝐏𝐋𝐎𝐀𝐃𝐈𝐍𝐆! 📤**\n\n'
+                           f'<pre><code>**🔖 Batch Name =** `{b_name}` (ᏒᎾᏯᎠᎽ) 🦁</code></pre>\n\n\n'
+                           f'**⏳ Uploading Your videos may take some time**\n\n\n')
                     
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
                     res_file = await helper.download_video(url, cmd, name)
