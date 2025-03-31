@@ -194,58 +194,62 @@ async def start_command(bot: Client, message: Message):
 
     # Delete the loading message
     await loading_message.delete()
- 
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, InputMediaPhoto
 
-# Initialize the bot
-bot = Client("my_bot")  # Add your API credentials here
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-# Inline buttons
 BUTTONS = InlineKeyboardMarkup([
     [InlineKeyboardButton("Contact", url="https://t.me/buddy_013")],
+   
     [InlineKeyboardButton("Owner", url="https://t.me/buddy_013")],
-    [InlineKeyboardButton("Get Bot ID", callback_data="bot_id")],
-    [InlineKeyboardButton("Get User ID", callback_data="user_id")]
 ])
 
-# Command to get user information with AI-generated image
+#=================== TELEGRAM ID INFORMATION =============
+
 @bot.on_message(filters.private & filters.command("info"))
 async def info(bot: Client, update: Message):
-    user = update.from_user
-    text = f"""--**✨ User Information**--
-
-🙋🏻‍♂️ **First Name :** {user.first_name}
-🧖‍♂️ **Last Name :** {user.last_name if user.last_name else 'None'}
-🧑🏻‍🎓 **Username :** {user.username if user.username else 'None'}
-🆔 **User ID :** `{user.id}`
-🔗 **Profile Link :** {user.mention}"""
     
-    await bot.send_photo(
-        chat_id=update.chat.id,
-        photo="https://via.placeholder.com/500?text=AI+Generated+User+Info",  # Replace with actual AI-generated image URL
-        caption=text,
+    text = f"""--**✨ Information**--
+
+**🙋🏻‍♂️ First Name :** {update.from_user.first_name}
+**🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
+**🧑🏻‍🎓 Your Username :** {update.from_user.username}
+**🆔 Your Telegram ID :** {update.from_user.id}
+**🔗 Your Profile Link :** {update.from_user.mention}"""
+    
+    await update.reply_text(        
+        text=text,
+        disable_web_page_preview=True,
         reply_markup=BUTTONS
     )
 
-# Command to get bot ID with AI-generated image
+
 @bot.on_message(filters.private & filters.command("id"))
-async def id_info(bot: Client, update: Message):
-    user = update.from_user
-    text = f"""--**🆔 ID Information**--
+async def id(bot: Client, update: Message):
+    if update.chat.type == "channel":
+        await update.reply_text(
+            text=f"**This Channel's ID:** {update.chat.id}",
+            disable_web_page_preview=True
+        )
+    else:
+        await update.reply_text(        
+            text=f"**Your Telegram ID :** {update.from_user.id}",
+            disable_web_page_preview=True,
+            reply_markup=BUTTONS
+        )  
 
-🙋🏻‍♂️ **User Name :** {user.first_name}
+# Command to get user ID
+@bot.on_message(filters.private & filters.command("id"))
+async def user_id(bot: Client, update: Message):
+    user = update.from_user
+    text = f"""--**User Information**--
+
+🙋 **User Name :** {user.first_name}
 🆔 **User ID :** `{user.id}`
 🔗 **Profile Link :** {user.mention}"""
     
-    await bot.send_photo(
-        chat_id=update.chat.id,
-        photo="https://via.placeholder.com/500?text=AI+Generated+ID+Info",  # Replace with actual AI-generated image URL
-        caption=text,
-        reply_markup=BUTTONS
-    )
+    await update.reply_text(text, disable_web_page_preview=True, reply_markup=BUTTONS)
 
-# Callback handler for buttons
+# Callback handler for button
 @bot.on_callback_query()
 async def callback_handler(bot: Client, query):
     if query.data == "bot_id":
@@ -259,7 +263,8 @@ async def callback_handler(bot: Client, query):
         await query.message.edit_text(
             f"🙋 **User ID:** `{user.id}`",
             reply_markup=BUTTONS
-)   
+        ) 
+
 
 
 @bot.on_message(filters.command('t2t'))
