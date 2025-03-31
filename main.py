@@ -77,7 +77,7 @@ async def sudo_command(bot: Client, message: Message):
     try:
         args = message.text.split(" ", 2)
         if len(args) < 2:
-            await message.reply_text("**Usage:** `/sudo add <user_id>` or `/sudo remove <user_id>`")
+            await message.reply_text("**Usage:** `/sudoadd <user_id>` or `/sudoremove <user_id>`")
             return
 
         action = args[1].lower()
@@ -108,11 +108,11 @@ import random
 keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Contact 📲 " ,url=f"https://t.me/ROWDYOFFICIALBOT") ],
+                    InlineKeyboardButton("Contact 📞 " ,url=f"https://t.me/ROWDYOFFICIALBOT") ],
                     [
                     InlineKeyboardButton("🔔 Update channel 🔔" ,url="https://t.me/+SuHeln3S5glkZjFl") ],
                     [
-                    InlineKeyboardButton(" Owner🪄" ,url="https://t.me/ROWDYOFFICIALBOT")                              
+                    InlineKeyboardButton(" Owner ⚒️" ,url="https://t.me/ROWDYOFFICIALBOT")                              
                 ],           
             ]
       )
@@ -120,9 +120,13 @@ keyboard = InlineKeyboardMarkup(
 # Image URLs for the random image feature
 image_urls = [
     
-    "https://graph.org/file/82b147b13927bab3ca547-79bd007fd6d33e9224.jpg",
-    "https://graph.org/file/82b147b13927bab3ca547-79bd007fd6d33e9224.jpg",
-    "https://graph.org/file/82b147b13927bab3ca547-79bd007fd6d33e9224.jpg",
+    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
+    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
+    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
+    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
+    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
+    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
+    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
     # Add more image URLs as needed
 ]
     
@@ -144,12 +148,12 @@ async def start_command(bot: Client, message: Message):
         "🌟 Hello Boss 😎 {0} 🌟\n\n"
         "➽ **I am nom drm uploader bot 📥**\n\n"
         "➽ **/Help ⚔️For Help Use Command**\n\n"
-        "➽ **/e2t - Edit txt file📝**\n\n"
-        "➽ **/t2t - Txt to Txt file📝**\n\n"
-        "➽ **/cookies - Upload cookies file🍪**\n\n"
+        "➽ **/e2t - Edit txt file📋**\n\n"
+        "➽ **/t2t - Txt to Txt file📑**\n\n"
+        "➽ **/cookies - Upload cookies file 🗑️**\n\n"
         "➽ **/y2t - Create txt of yt playlist**\n\n"
         "➽ **/stop working process Command**\n\n"
-        "➽ **Use /Rowdy Command To Download  Data From TXT File 🗃️ \n\n\n"
+        "➽ **/Rowdy Command Use To Download  Data From TXT File 🗃️ \n\n\n"
         "╭────────◆◇◆────────╮\n ⚡ MADE BY : [ᏒᎾᏯᎠᎽ](t.me/buddy_013)\n╰────────◆◇◆────────╯\n\n"
     
       )
@@ -199,9 +203,9 @@ async def start_command(bot: Client, message: Message):
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 BUTTONS = InlineKeyboardMarkup([
-    [InlineKeyboardButton("Contact", url="https://t.me/buddy_013")],
+    [InlineKeyboardButton("Contact 📞", url="https://t.me/buddy_013")],
    
-    [InlineKeyboardButton("Owner", url="https://t.me/buddy_013")],
+    [InlineKeyboardButton("Owner 🥷", url="https://t.me/buddy_013")],
 ])
 
 #=================== TELEGRAM ID INFORMATION =============
@@ -209,7 +213,7 @@ BUTTONS = InlineKeyboardMarkup([
 @bot.on_message(filters.private & filters.command("info"))
 async def info(bot: Client, update: Message):
     
-    text = f"""--**✨ Information**--
+    text = f"""--**╭━━━━━━━━━━━╮\n ✨ Information ✨\n╰━━━━━━━━━━━╯**--
 
 **🙋🏻‍♂️ First Name :** {update.from_user.first_name}
 **🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
@@ -959,7 +963,7 @@ async def upload(bot: Client, m: Message):
                     emoji_message = await show_random_emojis(message)
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
-                    Show =(  f'<pre><code>🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀{progress:.2f}%</code></pre>\n\n'
+                    Show =(  f'<pre><code>🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀 {progress:.2f}%</code></pre>\n\n'
                            f'**┠📊 Total Links = {len(links)}\n**'
                            f'**┠⚡ Currently on = {str(count)}/{len(links)}\n**'
                            f'**┠⏳ Remaining links = {remaining_links}\n\n**'
