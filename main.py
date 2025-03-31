@@ -194,55 +194,7 @@ async def start_command(bot: Client, message: Message):
 
     # Delete the loading message
     await loading_message.delete()
- ChatGPT
-
-You said:
-      
-Application Logs
-2025-03-31T15:33:53.455116+00:00 heroku[worker.1]: State changed from up to crashed
-2025-03-31T15:33:53.458102+00:00 heroku[worker.1]: State changed from crashed to starting
-2025-03-31T15:34:00.839998+00:00 heroku[worker.1]: Starting process with command /bin/sh -c python3\ main.py
-2025-03-31T15:34:01.427097+00:00 heroku[worker.1]: State changed from starting to up
-2025-03-31T15:34:02.160414+00:00 app[worker.1]: Traceback (most recent call last):
-2025-03-31T15:34:02.160418+00:00 app[worker.1]:   File "/app/main.py", line 201, in <module>
-2025-03-31T15:34:02.160546+00:00 app[worker.1]:     [InlineKeyboardButton("Contact", Url="https://t.me/buddy_013")],
-2025-03-31T15:34:02.160547+00:00 app[worker.1]: TypeError: InlineKeyboardButton.__init__() got an unexpected keyword argument 'Url'
-2025-03-31T15:34:02.316718+00:00 heroku[worker.1]: Process exited with status 1
-2025-03-31T15:34:02.340038+00:00 heroku[worker.1]: State changed from up to crashed
-ChatGPT said:
-The issue in your main.py script is with the InlineKeyboardButton initialization. The error message:
-
-TypeError: InlineKeyboardButton.__init__() got an unexpected keyword argument 'Url'
-Fix:
-The correct argument should be url (lowercase u), not Url. Update your code:
-
-[InlineKeyboardButton("Contact", url="https://t.me/buddy_013")],
-After fixing this, redeploy your app on Heroku. If the issue persists, let me know!
-
-You said:
-Kya error hai 
-ChatGPT said:
-Aapke code mein jo error aa rahi hai, uska matlab hai ki aap InlineKeyboardButton class ko galat keyword argument de rahe ho. Aapne Url likha hai, lekin InlineKeyboardButton ko url (chhote letters mein) chahiye.
-
-Error ka reason:
-TypeError: InlineKeyboardButton.__init__() got an unexpected keyword argument 'Url'
-Solution:
-Aapko apne code mein Url ko url se replace karna hoga. Jaise:
-
-Galat code:
-
-[InlineKeyboardButton("Contact", Url="https://t.me/buddy_013")],
-Sahi code:
-
-[InlineKeyboardButton("Contact", url="https://t.me/buddy_013")],
-Isse error fix ho jayegi. Ab aap apne app ko dubara deploy kar sakte hain.
-
-You said:
-Ok
-ChatGPT said:
-Great! Agar aapko aur koi madad chahiye ho, toh zaroor batana. Best of luck with your app!
-
-You said:
+ 
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, InputMediaPhoto
 
