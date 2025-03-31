@@ -198,8 +198,8 @@ async def start_command(bot: Client, message: Message):
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 BUTTONS = InlineKeyboardMarkup([
-    [InlineKeyboardButton("Contact", callback_data="[ᏒᎾᏯᎠᎽ](t.me/buddy_013)")],
-    [InlineKeyboardButton("Owner", callback_data="[ᏒᎾᏯᎠᎽ](t.me/buddy_013)")]
+    [InlineKeyboardButton("Contact", callback_data="https://t.me/buddy_013")],
+    [InlineKeyboardButton("Owner", callback_data="https://t.me/buddy_013")],
 ])
 
 #=================== TELEGRAM ID INFORMATION =============
@@ -235,6 +235,35 @@ async def id(bot: Client, update: Message):
             disable_web_page_preview=True,
             reply_markup=BUTTONS
         )  
+
+# Command to get user ID
+@bot.on_message(filters.private & filters.command("id"))
+async def user_id(bot: Client, update: Message):
+    user = update.from_user
+    text = f"""--**User Information**--
+
+🙋 **User Name :** {user.first_name}
+🆔 **User ID :** `{user.id}`
+🔗 **Profile Link :** {user.mention}"""
+    
+    await update.reply_text(text, disable_web_page_preview=True, reply_markup=BUTTONS)
+
+# Callback handler for button
+@bot.on_callback_query()
+async def callback_handler(bot: Client, query):
+    if query.data == "bot_id":
+        bot_user = await bot.get_me()
+        await query.message.edit_text(
+            f"🤖 **Bot ID:** `{bot_user.id}`",
+            reply_markup=BUTTONS
+        )
+    elif query.data == "user_id":
+        user = query.from_user
+        await query.message.edit_text(
+            f"🙋 **User ID:** `{user.id}`",
+            reply_markup=BUTTONS
+        )
+
 
 @bot.on_message(filters.command('t2t'))
 async def text_to_txt(client, message: Message):
