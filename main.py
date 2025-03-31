@@ -213,7 +213,7 @@ BUTTONS = InlineKeyboardMarkup([
 @bot.on_message(filters.private & filters.command("info"))
 async def info(bot: Client, update: Message):
     
-    text = f"""--**╭━━━━━━━━━━━╮\n ✨ Information ✨\n╰━━━━━━━━━━━╯**--
+    text = f"""**╭━━━━━━━━━━━╮\n ✨ Information ✨\n╰━━━━━━━━━━━╯**\n
 
 **🙋🏻‍♂️ First Name :** {update.from_user.first_name}
 **🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
@@ -614,8 +614,8 @@ async def help_command(client: Client, msg: Message):
         "`/cookies` - Upload cookies file🍪\n\n"
         "`/e2t` - Edit txt file📝\n\n"
         "`/y2t` - Create txt of yt playlist (owner)🗃️\n\n"
-        "`/sudoadd` - Add user or group or channel (owner)🎊\n\n"
-        "`/sudoremove` - Remove user or group or channel (owner)❌\n\n"
+        "`/sudo add` - Add user or group or channel (owner)🎊\n\n"
+        "`/sudo remove` - Remove user or group or channel (owner)❌\n\n"
         "`/userlist` - List of sudo user or group or channel📜\n\n"
        
     )
