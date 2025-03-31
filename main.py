@@ -913,7 +913,7 @@ async def upload(bot: Client, m: Message):
                     Show =(  f'<pre><code>🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀{progress:.2f}%</code></pre>\n\n'
                            f'**┠📊 Total Links = {len(links)}\n**'
                            f'**┠⚡ Currently on = {str(count)}/{len(links)}\n**'
-                           f'**┠⏳ Remaining links = {remaining_links}\n**'
+                           f'**┠⏳ Remaining links = {remaining_links}\n\n**'
                            f'**📤 𝐔𝐏𝐋𝐎𝐀𝐃𝐈𝐍𝐆! 📤**\n\n'
                            f'<pre><code>**🔖 Batch Name =** `{b_name}` (ᏒᎾᏯᎠᎽ) 🦁</code></pre>\n\n'
                            f'**⏳ Uploading Your videos may take some time**\n\n'
@@ -950,7 +950,7 @@ async def upload(bot: Client, m: Message):
                        f"🔢 𝗜𝗻𝗱𝗲𝘅 𝗥𝗮𝗻𝗴𝗲 : ({raw_text} to {len(links)})\n\n"
                        f"🔖 𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 : {b_name}\n\n"
                        f"━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-                       f"✅ Status: Download Completed")
+                       f"✅ STATUS: DOWNLOAD COMPLETED")
                     
 
 bot.run()
