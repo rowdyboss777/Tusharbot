@@ -52,7 +52,7 @@ async def show_random_emojis(message):
 OWNER_ID = 7003164707 # Replace with the actual owner's user ID
 
 # List of sudo users (initially empty or pre-populated)
-SUDO_USERS = [7003164707,7003164707]
+SUDO_USERS = [7003164707,6944575867]
 
 AUTH_CHANNEL = -1002569058515
 
@@ -687,14 +687,14 @@ async def upload(bot: Client, m: Message):
     else:
         CR = credit
    
-    #await editable.edit("**𝗘𝗻𝘁𝗲𝗿 𝗣𝘄 𝗧𝗼𝗸𝗲𝗻 𝗙𝗼𝗿 𝗣𝘄 𝗨𝗽𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝗼𝗿 𝗦𝗲𝗻𝗱 `'noo'` 𝗙𝗼𝗿 𝗢𝘁𝗵𝗲𝗿𝘀**")
-    #input4: Message = await bot.listen(editable.chat.id)
-    #raw_text4 = input4.text
-    #await input4.delete(True)
-    #if raw_text4 == 'noo':
-        #MR = token
-    #else:
-        #MR = raw_text4
+    await editable.edit("**𝗘𝗻𝘁𝗲𝗿 𝗣𝘄 𝗧𝗼𝗸𝗲𝗻 𝗙𝗼𝗿 𝗣𝘄 𝗨𝗽𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝗼𝗿 𝗦𝗲𝗻𝗱 `'noo'` 𝗙𝗼𝗿 𝗢𝘁𝗵𝗲𝗿𝘀**")
+    input4: Message = await bot.listen(editable.chat.id)
+    raw_text4 = input4.text
+    await input4.delete(True)
+    if raw_text4 == 'noo':
+        MR = token
+    else:
+        MR = raw_text4
     
     await editable.edit("Now send the **Thumb url**\n**Eg :** ``\n\nor Send `no`")
     input6 = message = await bot.listen(editable.chat.id)
