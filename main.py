@@ -911,13 +911,13 @@ async def upload(bot: Client, m: Message):
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
                     Show =(  f'<pre><code>🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀{progress:.2f}%</code></pre>\n\n'
-                           f'├📊 Total Links = {len(links)}\n|\n'
-                           f'├⚡ Currently on = {str(count)}/{len(links)}\n|\n'
+                           f'├📊 Total Links = {len(links)}\n│\n'
+                           f'├⚡ Currently on = {str(count)}/{len(links)}\n│\n'
                            f'├⏳ Remaining links = {remaining_links}\n\n'
                            f'**📤 𝐔𝐏𝐋𝐎𝐀𝐃𝐈𝐍𝐆! 📤**\n\n'
-                           f'<pre><code>**🔖 Batch Name =** `{b_name}` (ᏒᎾᏯᎠᎽ) 🦁</code></pre>\n\n\n'
+                           f'<pre><code>**🔖 Batch Name =** `{b_name}` (ᏒᎾᏯᎠᎽ) 🦁</code></pre>\n\n'
                            f'**⏳ Uploading Your videos may take some time**\n\n'
-                           f'**╭────────◆◇◆────────╮\n ⚡ MADE BY : [ᏒᎾᏯᎠᎽ](t.me/buddy_013)\n╰────────◆◇◆────────╯**\n\n\n')
+                           f'**╭────────◆◇◆────────╮\n ⚡ MADE BY : [ᏒᎾᏯᎠᎽ](t.me/buddy_013)\n╰────────◆◇◆────────╯**\n\n')
                            
                            
                     
