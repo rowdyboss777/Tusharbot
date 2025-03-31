@@ -569,29 +569,46 @@ async def help_command(client: Client, msg: Message):
     await msg.reply_text(help_text)
 
 # Upload command handler
-@bot.on_message(filters.command(["Rowdy"]) )
-async def txt_handler(bot: Client, m: Message):
-    editable = await m.reply_text(f"**Send your txt file 🗃️**")
+@bot.on_message(filters.command(["Rowdy"]))
+async def upload(bot: Client, m: Message):
+    if not is_authorized(m.chat.id):
+        await m.reply_text("**🚫You are not authorized to use this bot.**")
+        return
+
+    editable = await m.reply_text(f"Send Txt file 🗃️")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
-    await bot.send_document(OWNER, x)
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))
-    credit = f"ROWDY"
-    token = f"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzYxNTE3MzAuMTI2LCJkYXRhIjp7Il9pZCI6IjYzMDRjMmY3Yzc5NjBlMDAxODAwNDQ4NyIsInVzZXJuYW1lIjoiNzc2MTAxNzc3MCIsImZpcnN0TmFtZSI6IkplZXYgbmFyYXlhbiIsImxhc3ROYW1lIjoic2FoIiwib3JnYW5pemF0aW9uIjp7Il9pZCI6IjVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OSIsIndlYnNpdGUiOiJwaHlzaWNzd2FsbGFoLmNvbSIsIm5hbWUiOiJQaHlzaWNzd2FsbGFoIn0sImVtYWlsIjoiV1dXLkpFRVZOQVJBWUFOU0FIQEdNQUlMLkNPTSIsInJvbGVzIjpbIjViMjdiZDk2NTg0MmY5NTBhNzc4YzZlZiJdLCJjb3VudHJ5R3JvdXAiOiJJTiIsInR5cGUiOiJVU0VSIn0sImlhdCI6MTczNTU0NjkzMH0.iImf90mFu_cI-xINBv4t0jVz-rWK1zeXOIwIFvkrS0M"
+    pdf_count = 0
+    img_count = 0
+    zip_count = 0
+    video_count = 0
+    
     try:    
         with open(x, "r") as f:
             content = f.read()
         content = content.split("\n")
+        
         links = []
         for i in content:
-            links.append(i.split("://", 1))
+            if "://" in i:
+                url = i.split("://", 1)[1]
+                links.append(i.split("://", 1))
+                if ".pdf" in url:
+                    pdf_count += 1
+                elif url.endswith((".png", ".jpeg", ".jpg")):
+                    img_count += 1
+                elif ".zip" in url:
+                    zip_count += 1
+                else:
+                    video_count += 1
         os.remove(x)
     except:
-        await m.reply_text("Invalid file input.")
+        await m.reply_text("😶𝗜𝗻𝘃𝗮𝗹𝗶𝗱 𝗙𝗶𝗹𝗲 𝗜𝗻𝗽𝘂𝘁😶")
         os.remove(x)
         return
-   
+        
     await editable.edit(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
