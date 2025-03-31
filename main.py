@@ -198,8 +198,8 @@ async def start_command(bot: Client, message: Message):
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 BUTTONS = InlineKeyboardMarkup([
-    [InlineKeyboardButton("Contact", callback_data="https://t.me/buddy_013")],
-    [InlineKeyboardButton("Owner", callback_data="https://t.me/buddy_013")],
+    [InlineKeyboardButton("Contact", Url="https://t.me/buddy_013")],
+    [InlineKeyboardButton("Owner", Url="https://t.me/buddy_013")],
 ])
 
 #=================== TELEGRAM ID INFORMATION =============
