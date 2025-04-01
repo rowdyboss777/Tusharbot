@@ -35,7 +35,7 @@
 - **`/sudoremove`**: ❌ remove user or group or channel (owner).
 - **`/userlist`**: 📜 list of sudo user/group/channel.
 - **`/help`**: 🎉 for help.
-- **/info** your telegram information
-- **/id** your telegram user id 🆔 
+- **`/info`** your telegram information
+- **`/id`** your telegram user id 🆔 
 
  
