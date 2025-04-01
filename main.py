@@ -153,7 +153,7 @@ async def start_command(bot: Client, message: Message):
         "➽ **/y2t - Create txt of yt playlist**\n\n"
         "➽ **/stop working process Command**\n\n"
         "➽ **/Rowdy Command Use To Download  Data From TXT File 🗃️** \n\n"
-        "**   ╭────────◆◇◆────────╮\n⚡ MADE BY : [ᏒᎾᏯᎠᎽ](t.me/buddy_013)\n╰────────◆◇◆────────╯**\n\n"
+        "**╭────────◆◇◆────────╮\n⚡ MADE BY : [ᏒᎾᏯᎠᎽ](t.me/buddy_013)\n╰────────◆◇◆────────╯**\n\n"
     
       )
 
@@ -212,7 +212,7 @@ BUTTONS = InlineKeyboardMarkup([
 @bot.on_message(filters.private & filters.command("info"))
 async def info(bot: Client, update: Message):
     
-    text = f"""╭━━━━━━━━━━━╮\n ✨ Information ✨\n╰━━━━━━━━━━━╯\n
+    text = f"""✨ Information ✨
 
 **🙋🏻‍♂️ First Name :** {update.from_user.first_name}
 **🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
@@ -681,9 +681,9 @@ async def upload(bot: Client, m: Message):
         # Send a message with the batch name and pin it
         name_message = await bot.send_message(
             m.chat.id,
-            f"━━━━━━━━━━━━━━━━━━━━━\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"**🎯 {fancy_batch_name}**"
-            f"━━━━━━━━━━━━━━━━━━━━━"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
         
