@@ -676,14 +676,14 @@ async def upload(bot: Client, m: Message):
         file_name_without_ext = os.path.splitext(file_name)[0]
         
         # Create a fancy batch name
-        fancy_batch_name = f"𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞: 𝗤𝘂𝗮𝗹𝗶𝘁𝘆".replace("𝗤𝘂𝗮𝗹𝗶𝘁𝘆", file_name_without_ext)
+        fancy_batch_name = f"Batch Name : 𝗤𝘂𝗮𝗹𝗶𝘁𝘆".replace("𝗤𝘂𝗮𝗹𝗶𝘁𝘆", file_name_without_ext)
         
         # Send a message with the batch name and pin it
         name_message = await bot.send_message(
             m.chat.id,
-            f"╭───────────────────────╮\n"
-            f"🔖 {fancy_batch_name}\n"
-            f"╰───────────────────────╯\n"
+        
+            f"🔖 {fancy_batch_name}"
+            
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
         
