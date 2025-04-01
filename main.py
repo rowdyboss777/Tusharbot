@@ -108,11 +108,11 @@ import random
 keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Contact 📞 " ,url=f"https://t.me/ROWDYOFFICIALBOT") ],
+                    InlineKeyboardButton("📞 Contact " ,url=f"https://t.me/ROWDYOFFICIALBOT") ],
                     [
-                    InlineKeyboardButton("🔔 Update channel 🔔" ,url="https://t.me/+SuHeln3S5glkZjFl") ],
+                    InlineKeyboardButton("🔔 Update channel " ,url="https://t.me/+SuHeln3S5glkZjFl") ],
                     [
-                    InlineKeyboardButton(" Owner ⚒️ " ,url="https://t.me/ROWDYOFFICIALBOT")                              
+                    InlineKeyboardButton("⚒️ Owner " ,url="https://t.me/ROWDYOFFICIALBOT")                              
                 ],           
             ]
       )
@@ -202,9 +202,9 @@ async def start_command(bot: Client, message: Message):
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 BUTTONS = InlineKeyboardMarkup([
-    [InlineKeyboardButton("Contact 📞", url="https://t.me/buddy_013")],
+    [InlineKeyboardButton("📞 Contact ", url="https://t.me/buddy_013")],
    
-    [InlineKeyboardButton("Owner 🥷", url="https://t.me/buddy_013")],
+    [InlineKeyboardButton("🥷 Owner ", url="https://t.me/buddy_013")],
 ])
 
 #=================== TELEGRAM ID INFORMATION =============
@@ -681,9 +681,9 @@ async def upload(bot: Client, m: Message):
         # Send a message with the batch name and pin it
         name_message = await bot.send_message(
             m.chat.id,
-            f"╭─────────────────────────╮\n"
-            f"🔖 {fancy_batch_name}\n"
-            f"╰─────────────────────────╯\n"
+            f"╭───────────────────────╮\n\n"
+            f"🔖 {fancy_batch_name}"
+            f"╰───────────────────────╯\n\n"
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
         
