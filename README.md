@@ -27,12 +27,15 @@
 - **`/rowdy`**:  📁 upload txt file.
 - **`/stop`**: 🛑 stop ongoing process.
 - **`/restart`**: 🔮 restart the bot.
-- **`/cookies`**: 🍪 upload cookies file.
+- **`/cookies`**: 🍪 upload cookiesfile.
 - **`/e2t`**: 📝 edit txt file.
-- **`/yt2txt`**: 🗃️ create txt of yt playlist (owner).
+- **`/y2t`**: 🗃️ create txt of yt
+- playlist.
 - **`/sudoadd`**: 🎊 add user or group or channel (owner).
 - **`/sudoremove`**: ❌ remove user or group or channel (owner).
 - **`/userlist`**: 📜 list of sudo user/group/channel.
 - **`/help`**: 🎉 for help.
+- **/info** your telegram information
+- **/id** your telegram user id 🆔 
 
  
