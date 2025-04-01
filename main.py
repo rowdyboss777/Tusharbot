@@ -682,7 +682,7 @@ async def upload(bot: Client, m: Message):
         name_message = await bot.send_message(
             m.chat.id,
         
-            f"<blockquote><code>🔖 {fancy_batch_name}</code><blockquote>"
+            f"<blockquote><code>🔖 {fancy_batch_name}</code></blockquote>"
             
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
@@ -962,7 +962,7 @@ async def upload(bot: Client, m: Message):
                     emoji_message = await show_random_emojis(message)
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
-                    Show =(  f'<pre><code>🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀 {progress:.2f}%</code></pre>\n\n'
+                    Show =(  f'<blockquote><code>🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀 {progress:.2f}%</code></blockquote>\n\n'
                            f'**┠📊 Total Links = {len(links)}\n**'
                            f'**┠⚡ Currently on = {str(count)}/{len(links)}\n**'
                            f'**┠⏳ Remaining links = {remaining_links}\n\n**'
