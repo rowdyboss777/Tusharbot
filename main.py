@@ -682,7 +682,7 @@ async def upload(bot: Client, m: Message):
         name_message = await bot.send_message(
             m.chat.id,
         
-            f"<blockquote><b>🔖{fancy_batch_name}</blockquote></b>"
+            f"<blockquote expandable>🔖{fancy_batch_name}</blockquote>"
             
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
