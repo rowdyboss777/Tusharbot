@@ -147,7 +147,7 @@ async def start_command(bot: Client, message: Message):
     # Caption for the image
     caption = (
         
-        "<blockquote> 🌟 Hello Boss 😎 {0}🌟</blockquote>\n\n"
+        """<blockquote> 🌟 Hello Boss 😎 {0}🌟</blockquote>\n\n"""
         "➽ **/Help ⚔️For Help Use Command**\n\n"
         "➽ **/e2t - Edit txt file 📋**\n\n"
         "➽ **/t2t - Txt to Txt file 📝**\n\n"
@@ -684,7 +684,7 @@ async def upload(bot: Client, m: Message):
         name_message = await bot.send_message(
             m.chat.id,
         
-            f"<blockquote>🔖{fancy_batch_name}</blockquote>"
+            f"""<blockquote>🔖{fancy_batch_name}</blockquote>"""
             
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
