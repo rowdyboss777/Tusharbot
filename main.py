@@ -147,8 +147,8 @@ async def start_command(bot: Client, message: Message):
         
         "🌟 Hello Boss 😎 {0} 🌟\n\n"
         "➽ **/Help ⚔️For Help Use Command**\n\n"
-        "➽ **/e2t - Edit txt file📋**\n\n"
-        "➽ **/t2t - Txt to Txt file📝**\n\n"
+        "➽ **/e2t - Edit txt file 📋**\n\n"
+        "➽ **/t2t - Txt to Txt file 📝**\n\n"
         "➽ **/cookies - Upload cookies file 🗑️**\n\n"
         "➽ **/y2t - Create txt of yt playlist**\n\n"
         "➽ **/stop working process Command**\n\n"
@@ -681,9 +681,9 @@ async def upload(bot: Client, m: Message):
         # Send a message with the batch name and pin it
         name_message = await bot.send_message(
             m.chat.id,
-            f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"**🎯 {fancy_batch_name}**"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"╭─────────────────────────╮\n"
+            f"🔖 {fancy_batch_name}\n"
+            f"╰─────────────────────────╯\n"
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
         
