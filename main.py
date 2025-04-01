@@ -14,6 +14,8 @@ import random
 import ffmpeg
 import logging 
 import yt_dlp
+from telegram import Bot
+from telegram.constants import ParseMode
 from aiohttp import web
 from core import *
 from urllib.parse import urlparse, parse_qs
