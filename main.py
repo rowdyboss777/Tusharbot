@@ -870,14 +870,15 @@ async def upload(bot: Client, m: Message):
                          f"🎥 VIDEO ID: {str(count).zfill(3)}\n"
                          f"╰━━━━━━━━━━━╯\n\n"
                          f"📄 **Title** : {name1} {res} .mkv\n\n"
-                         f"🔖 **Batch Name** : {b_name}\n\n"
+                         f"📕 **Batch Name** : {b_name}\n\n"
                          f"📥 Extracted By : {CR}\n\n"
                          f"✨ Click the button below to stream the video! 🎬"
+                         f"🎥 Stream video : <a href="{url}">Click Here to Watch Video</a>"
              )
 
 # Inline Button for Streaming
                 BUTTONS = InlineKeyboardMarkup([
-                      [InlineKeyboardButton("🎥 Stream Video", url="https://t.me/buddy_013")]
+                      [InlineKeyboardButton("🎥 Stream Video", url="url")]
              ])
 
 # Send Message with Button
@@ -1008,7 +1009,7 @@ async def upload(bot: Client, m: Message):
                            f'**┠⚡ Currently on = {str(count)}\n**'
                            f'**┠⏳ Remaining links = {remaining_links}\n\n**'
                            f'**📤 𝐔𝐏𝐋𝐎𝐀𝐃𝐈𝐍𝐆! 📤**\n\n'
-                           f'<pre><code>**🔖 Batch Name =** `{b_name}` (ᏒᎾᏯᎠᎽ) 🦁</code></pre>\n\n'
+                           f'<pre><code>**📕 Batch Name =** `{b_name}` (ᏒᎾᏯᎠᎽ) 🦁</code></pre>\n\n'
                            f'**⏳ Uploading Your videos may take some time**\n\n'
                            f'**╭────────◆◇◆────────╮\n⚡ MADE BY : [ᏒᎾᏯᎠᎽ](t.me/buddy_013)\n╰────────◆◇◆────────╯**\n\n')
                            
