@@ -858,11 +858,32 @@ async def upload(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:
-    cc = f'╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}\n\n📥 Extracted By : {CR}'
-    cc1 = f'╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}\n\n📥 Extracted By : {CR}'
-
     from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+    # Ensure required variables are defined
+    if not all([count, name1, res, b_name, CR, url, chat_id]):
+        raise ValueError("One or more required variables are missing!")
+
+    # Message Content
+    cc = (
+        f'╭━━━━━━━━━━━╮\n'
+        f'🎥 VIDEO ID: {str(count).zfill(3)}.\n'
+        f'╰━━━━━━━━━━━╯\n\n'
+        f'📄 **Title** : {name1} {res} .mkv\n\n'
+        f'🔖 **Batch Name** : {b_name}\n\n'
+        f'📥 Extracted By : {CR}'
+    )
+
+    cc1 = (
+        f'╭━━━━━━━━━━━╮\n'
+        f'📁 FILE ID: {str(count).zfill(3)}.\n'
+        f'╰━━━━━━━━━━━╯\n\n'
+        f'📄 **Title** : {name1} .pdf\n\n'
+        f'🔖 **Batch Name** : {b_name}\n\n'
+        f'📥 Extracted By : {CR}'
+    )
+
+    # Streaming Message
     cczip = (
         f"╭━━━━━━━━━━━╮\n"
         f"🎥 VIDEO ID: {str(count).zfill(3)}\n"
@@ -882,7 +903,7 @@ async def upload(bot: Client, m: Message):
     app.send_message(chat_id, cczip, reply_markup=BUTTONS, disable_web_page_preview=True)
 
 except Exception as e:
-    print(f"Error in sending message: {e}")
+    print(f"❌ Error in sending message: {e}")
 
                    
                 if "drive" in url:
