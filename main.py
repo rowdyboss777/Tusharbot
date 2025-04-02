@@ -811,9 +811,7 @@ async def upload(bot: Client, m: Message):
                 name = f'{str(count).zfill(3)}) {name1[:60]}'
                 cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
 
-            if ".zip" in url:
-                url = f"https://video.pablocoder.eu.org/appx-zip?url={url}"
-                
+            
             elif "d1d34p8vz63oiq" in url or "sec1.pw.live" in url:
              url = f"https://anonymouspwplayer-b99f57957198.herokuapp.com/pw?url={url}?token={raw_text4}"
       
