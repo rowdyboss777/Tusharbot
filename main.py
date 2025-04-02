@@ -872,7 +872,8 @@ async def upload(bot: Client, m: Message):
                          f"📄 **Title** : {name1} {res} .mkv\n\n"
                          f"📕 **Batch Name** : {b_name}\n\n"
                          f"📥 Extracted By : {CR}\n\n"
-                         f"✨ Click the button below to stream the video! 🎬\n"
+                         f"✨ Click the button below to stream the video! 🎬\n\n"
+                         #f"🎥 Stream Video : <a href=\"{url}\">Click Here to Watch Video</a>"
              )
 
 # Inline Button for Streaming
@@ -884,6 +885,7 @@ async def upload(bot: Client, m: Message):
                 app.send_message(
                 chat_id=chat_id,  # आपका टार्गेट चैट आईडी
                 text=cczip,
+                url={url},
                 reply_markup=BUTTONS,
                 disable_web_page_preview=True
                )
