@@ -858,35 +858,36 @@ async def upload(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:
-    from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+               from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-    # अगर URL .zip फाइल है, तो इसे स्ट्रीमिंग लिंक में बदलें
-    if ".zip" in url:
-        url = f"https://video.pablocoder.eu.org/appx-zip?url={url}"
+               # अगर URL.zip फाइल है, तो इसे स्ट्रीमिंग लिंक में बदलें
+            if ".zip" in url:
+                url = f"https://video.pablocoder.eu.org/appx-zip?url={url}"
 
-    cc = f'╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}\n\n📥 Extracted By : {CR}'
-    cc1 = f'╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}\n\n📥 Extracted By : {CR}'
+               cc = f'╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}\n\n📥 Extracted By : {CR}'
+               cc1 = f'╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}\n\n📥 Extracted By : {CR}'
+  
+               cczip = (
+                      f"╭━━━━━━━━━━━╮\n"
+                      f"🎥 VIDEO ID: {str(count).zfill(3)}\n"
+                      f"╰━━━━━━━━━━━╯\n\n"
+                      f"📄 **Title** : {name1} {res} .mkv\n\n"
+                      f"🔖 **Batch Name** : {b_name}\n\n"
+                      f"📥 Extracted By : {CR}\n\n"
+                      f"✨ Click the button below to stream the video! 🎬"
+                      )
 
-    cczip = (
-        f"╭━━━━━━━━━━━╮\n"
-        f"🎥 VIDEO ID: {str(count).zfill(3)}\n"
-        f"╰━━━━━━━━━━━╯\n\n"
-        f"📄 **Title** : {name1} {res} .mkv\n\n"
-        f"🔖 **Batch Name** : {b_name}\n\n"
-        f"📥 Extracted By : {CR}\n\n"
-        f"✨ Click the button below to stream the video! 🎬"
-    )
+                # Inline Button for Streaming
+         BUTTONS = InlineKeyboardMarkup([
+                    [InlineKeyboardButton("🎥 Stream Video", url=url)]
+                      ])
 
-    # Inline Button for Streaming
-    BUTTONS = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🎥 Stream Video", url=url)]
-    ])
+              # Send Message with Button
+             app.send_message(chat_id, cczip, reply_markup=BUTTONS, disable_web_page_preview=True)
 
-    # Send Message with Button
-    app.send_message(chat_id, cczip, reply_markup=BUTTONS, disable_web_page_preview=True)
+        except Exception as e:
+              print(f"Error in sending message: {e}")
 
-except Exception as e:
-    print(f"Error in sending message: {e}")
 
                    
                 if "drive" in url:
