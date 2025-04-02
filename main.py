@@ -882,7 +882,7 @@ async def upload(bot: Client, m: Message):
              ])
 
 # Send Message with Button
-                app.send_message("✨ Click the button below to stream the video! 🎬", cczip, reply_markup=BUTTONS, disable_web_page_preview=True)
+                app.send_message("chat_id, text=cczip, reply_markup=BUTTONS, disable_web_page_preview=True)
 
             except Exception as e:
                 print(f"Error in sending message: {e}")
