@@ -19,7 +19,7 @@ from telegram.constants import ParseMode
 from aiohttp import web
 from core import *
 from urllib.parse import urlparse, parse_qs
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup  
 from yt_dlp import YoutubeDL
 import yt_dlp as youtube_dl
 import cloudscraper
@@ -44,6 +44,15 @@ pwimg = "https://graph.org/file/8add8d382169e326f67e0-3bf38f92e52955e977.jpg"
 #ytimg = "https://graph.org/file/3aa806c302ceec62e6264-60ced740281395f68f.jpg"
 cpimg = "https://graph.org/file/5ed50675df0faf833efef-e102210eb72c1d5a17.jpg"  
 
+credit =("ROWDY") 
+OWNER = int(os.environ.get("OWNER",7003164707))
+try: 
+    ADMINS=[7003164707] 
+    for x in (os.environ.get("ADMINS", "7003164707").split()):  
+        ADMINS.append(int(x)) 
+except ValueError: 
+        raise Exception("Your Admins list does not contain valid integers.") 
+ADMINS.append(OWNER)
 
 async def show_random_emojis(message):
     emojis = ['😘', '😍', '🥰', '❤️‍🔥', '😻', '🐼', '🐬', '🐳', '🥂', '🍾', '🕊️', '🍻', '☄️', '🕊️', '🪩', '🦚','🐅','🦁']
