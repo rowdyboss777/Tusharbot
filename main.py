@@ -872,13 +872,13 @@ async def upload(bot: Client, m: Message):
                          f"📄 **Title** : {name1} {res} .mkv\n\n"
                          f"📕 **Batch Name** : {b_name}\n\n"
                          f"📥 Extracted By : {CR}\n\n"
-                         f"✨ Click the button below to stream the video! 🎬"
-                         f"🎥 Stream video : <a href=\"{url}\">Click Here to Watch Video</a>"
+                         f"✨ Click the button below to stream the video! 🎬\n"
+                         f"🎥 Stream video : href=\"{url}\"Click Here to Watch Video"
              )
 
 # Inline Button for Streaming
                 BUTTONS = InlineKeyboardMarkup([
-                      [InlineKeyboardButton("🎥 Stream Video", url="url")]
+                      [InlineKeyboardButton("🎥 Stream Video", url=url)]
              ])
 
 # Send Message with Button
