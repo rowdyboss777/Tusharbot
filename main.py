@@ -860,7 +860,7 @@ async def upload(bot: Client, m: Message):
             try:
     from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-    #अगर URL.zip फाइल है, तो इसे स्ट्रीमिंग लिंक में बदलें
+    # अगर URL .zip फाइल है, तो इसे स्ट्रीमिंग लिंक में बदलें
     if ".zip" in url:
         url = f"https://video.pablocoder.eu.org/appx-zip?url={url}"
 
