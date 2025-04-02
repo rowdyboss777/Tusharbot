@@ -860,7 +860,14 @@ async def upload(bot: Client, m: Message):
             try:
                 cc = f'╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'
                 cc1 = f'╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'
-                cczip = f'╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}**\n\n🔗 𝐕𝐢𝐝𝐞𝐨 𝐥𝐢𝐧𝐤 - <a href="{url}">__**Click Here to Watch Video**__</a>\n\n📥 Extracted By** : {CR}'
+                cczip = f'╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}**\n\n📥 Extracted By** : {CR}'
+
+                from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+BUTTONS = InlineKeyboardMarkup([
+    [InlineKeyboardButton("Streaming video", url="{b_name}<a href=("{url}">__**Click Here to Watch Video**__</a>")],
+
+])
                    
                 if "drive" in url:
                     try:
