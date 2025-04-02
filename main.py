@@ -873,7 +873,7 @@ async def upload(bot: Client, m: Message):
                          f"📕 **Batch Name** : {b_name}\n\n"
                          f"📥 Extracted By : {CR}\n\n"
                          f"✨ Click the button below to stream the video! 🎬"
-                         f"🎥 Stream video : <a href="{url}">Click Here to Watch Video</a>"
+                         f"🎥 Stream video : <a href=\"{url}\">Click Here to Watch Video</a>"
              )
 
 # Inline Button for Streaming
