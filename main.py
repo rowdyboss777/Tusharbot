@@ -873,7 +873,6 @@ async def upload(bot: Client, m: Message):
                          f"📕 **Batch Name** : {b_name}\n\n"
                          f"📥 Extracted By : {CR}\n\n"
                          f"✨ Click the button below to stream the video! 🎬\n"
-                         f"🎥 Stream Video : <a href=\"{url}\">Click Here to Watch Video</a>"
              )
 
 # Inline Button for Streaming
@@ -881,9 +880,13 @@ async def upload(bot: Client, m: Message):
                       [InlineKeyboardButton("🎥 Stream Video", url=url)]
              ])
 
-# Send Message with Button
-                app.send_message("chat_id, text=cczip, reply_markup=BUTTONS, disable_web_page_preview=True)
-
+ #Send Message with Button
+                app.send_message(
+                chat_id=chat_id,  # आपका टार्गेट चैट आईडी
+                text=cczip,
+                reply_markup=BUTTONS,
+                disable_web_page_preview=True
+               )
             except Exception as e:
                 print(f"Error in sending message: {e}")
 
