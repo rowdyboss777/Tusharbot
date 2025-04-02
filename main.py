@@ -865,9 +865,9 @@ async def upload(bot: Client, m: Message):
                 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
                 BUTTONS = InlineKeyboardMarkup([
-                [InlineKeyboardButton("Stream video", url="{b_name}("{url}"")],
-   
-               ])
+    [InlineKeyboardButton(f"🎥 Watch {b_name}", url=url)]
+])
+
                    
                 if "drive" in url:
                     try:
