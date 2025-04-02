@@ -866,14 +866,14 @@ async def upload(bot: Client, m: Message):
                 cc1 = f'╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}\n\n📥 Extracted By : {CR}'
 
                cczip = (
-                   f"╭━━━━━━━━━━━╮\n"
-                   f"🎥 VIDEO ID: {str(count).zfill(3)}\n"
-                   f"╰━━━━━━━━━━━╯\n\n"
-                   f"📄 **Title** : {name1} {res} .mkv\n\n"
-                   f"🔖 **Batch Name** : {b_name}\n\n"
-                   f"📥 Extracted By : {CR}\n\n"
-                   f"✨ Click the button below to stream the video! 🎬"
-            )
+        f"╭━━━━━━━━━━━╮\n"
+        f"🎥 VIDEO ID: {str(count).zfill(3)}\n"
+        f"╰━━━━━━━━━━━╯\n\n"
+        f"📄 **Title** : {name1} {res} .mkv\n\n"
+        f"🔖 **Batch Name** : {b_name}\n\n"
+        f"📥 Extracted By : {CR}\n\n"
+        f"✨ Click the button below to stream the video! 🎬"
+    )
 
             # Inline Button for Streaming
             BUTTONS = InlineKeyboardMarkup([
