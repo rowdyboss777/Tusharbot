@@ -858,8 +858,11 @@ async def upload(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:
-   
     from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+    #अगर URL.zip फाइल है, तो इसे स्ट्रीमिंग लिंक में बदलें
+    if ".zip" in url:
+        url = f"https://video.pablocoder.eu.org/appx-zip?url={url}"
 
     cc = f'╭━━━━━━━━━━━╮\n🎥 VIDEO ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} {res} .mkv\n\n🔖 **Batch Name** : {b_name}\n\n📥 Extracted By : {CR}'
     cc1 = f'╭━━━━━━━━━━━╮\n📁 FILE ID: {str(count).zfill(3)}.\n╰━━━━━━━━━━━╯\n\n📄 **Title** : {name1} .pdf\n\n🔖 **Batch Name** : {b_name}\n\n📥 Extracted By : {CR}'
