@@ -878,7 +878,7 @@ async def upload(bot: Client, m: Message):
 
 # Inline Button for Streaming
                 BUTTONS = InlineKeyboardMarkup([
-                      [InlineKeyboardButton("🎥 Stream Video", url=`{url}`)]
+                      [InlineKeyboardButton("🎥 Stream Video", url=url)]
              ])
 
  #Send Message with Button
