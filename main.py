@@ -867,13 +867,13 @@ async def upload(bot: Client, m: Message):
 
                 cczip = (
                          f"╭━━━━━━━━━━━╮\n"
-                         f"🎥 VIDEO ID: {str(count).zfill(3)}\n"
+                         f"🎬 VIDEO ID: {str(count).zfill(3)}\n"
                          f"╰━━━━━━━━━━━╯\n\n"
                          f"├📄 **Title** : {name1} {res} .mkv\n│\n"
                          f"├📕 **Batch Name** : {b_name}\n│\n"
-                         f"├🎥 **Quality** : {res}\n\n"
-                         f"🥷 Extracted By : {CR}\n\n"
-                         f"🔘 Stream Video : <a href=\"{url}\">Click & Watch Video</a>\n\n"
+                         f"├🎥 **Quality** : {res}\n│\n"
+                         f"├🥷 **Extracted By** : {CR}\n│\n"
+                         f"├🔘 Stream Video :<a href=\"{url}\">Click & Watch Video</a>\n\n"
              )
 
 # Inline Button for Streaming
