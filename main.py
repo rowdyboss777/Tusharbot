@@ -863,6 +863,7 @@ async def upload(bot: Client, m: Message):
                       url = f"https://video.pablocoder.eu.org/appx-zip?url={url}"
 
                 cc = (
+                      f"✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧\n\n"
                       f"╭━━━━━━━━━━━╮\n"
                       f"🎥 VIDEO ID: {str(count).zfill(3)}.\n"
                       f"╰━━━━━━━━━━━╯\n\n"
@@ -870,10 +871,12 @@ async def upload(bot: Client, m: Message):
                       f"├📕 **Batch Name** : {b_name}\n│\n"
                       f"├🎬 **Resolution** : {res}\n│\n"
                       f"├🧸 **Extracted By** : {CR}\n\n"
+                      f"✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧\n\n"
                 )
                 
                 
-                cc1 = ( 
+                cc1 = (
+                     f"✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧\n\n"
                      f"╭━━━━━━━━━━━╮\n"
                      f"📁 FILE ID: {str(count).zfill(3)}.\n"
                      f"╰━━━━━━━━━━━╯\n\n"
@@ -881,11 +884,13 @@ async def upload(bot: Client, m: Message):
                      f"├📕 **Batch Name** : {b_name}\n│\n"
                      f"├🎬 **Resolution** : {res}\n│\n"
                      f"├🧸 **Extracted By** : {CR}\n\n"
+                     f"✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧\n\n"
                 )
      
                     
 
                 cczip = (
+                         f"✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧\n\n"
                          f"╭━━━━━━━━━━━╮\n"
                          f"🎥 VIDEO ID: {str(count).zfill(3)}\n"
                          f"╰━━━━━━━━━━━╯\n\n"
@@ -894,6 +899,7 @@ async def upload(bot: Client, m: Message):
                          f"├🎬 **Resolution** : {res}\n│\n"
                          f"├🧸 **Extracted By** : {CR}\n│\n"
                          f"├🔘 Stream Video : <a href=\"{url}\">Click & Watch Video</a>\n\n"
+                         f"✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧∘✧\n\n"
              )
 
 # Inline Button for Streaming
