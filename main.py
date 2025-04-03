@@ -781,7 +781,7 @@ async def upload(bot: Client, m: Message):
             V = links[i][1].replace("file/d/","uc?export=download&id=").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing","") # .replace("mpd","m3u8")
             url = "https://" + V
             link0 = "https://" + V
-            urlzip = "https://video.pablocoder.eu.org/appx-zip?url=https://" + V
+            urlzip = "http://api.masterapi.tech/akamai-player-v3?url=https://" + V
 
             if "visionias" in url:
                 async with ClientSession() as session:
