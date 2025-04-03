@@ -907,7 +907,7 @@ async def upload(bot: Client, m: Message):
 
                 elif ".zip" in url:
                     try:
-                        await bot.send_photo(chat_id=m.chat.id, photo=zipimg, caption=cczip,reply_markup=BUTTONSZIP)
+                        await bot.send_photo(chat_id=m.chat.id, photo=zipimg, caption=cc,reply_markup=BUTTONSZIP)
                         count +=1
                     except Exception as e:
                         await m.reply_text(str(e))    
