@@ -869,6 +869,17 @@ async def upload(bot: Client, m: Message):
                         f"├🎬 **Resolution** : {res}\n│\n"
                         f"├🧸 **Extracted By** : `{CR}`\n\n"
                    )
+                
+                cczip1 =(
+                        f"╭━━━━━━━━━━━╮\n"    
+                        f"📁 FILE ID: [{str(count).zfill(3)}.\n"
+                        f"╰━━━━━━━━━━━╯\n\n"
+                        f"├📄 **Title** : `{name1}`.pdf\n│\n"
+                        f"├📕 **Batch Name** : {b_name}\n│\n"
+                        f"├🎬 **Resolution** : {res}\n│\n"
+                        f"├🧸 **Extracted By** : `{CR}`\n\n"
+                       
+                )
 
                       
                 cc = (
