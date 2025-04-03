@@ -862,20 +862,21 @@ async def upload(bot: Client, m: Message):
                 BUTTONSZIP = InlineKeyboardMarkup([[InlineKeyboardButton(text="🎥 Stream Video ", url=f"{urlzip}")]])        
                 cc = (
                       f"╭━━━━━━━━━━━╮\n"
-                      f"🎥VID ID: {str(count).zfill(3)}.\n"
+                      f"🎥VIDEO ID: {str(count).zfill(3)}.\n"
                       f"╰━━━━━━━━━━━╯\n\n"
-                      f"📄 **Title** : `{name1}`\n"
+                      f"├📄 **Title** : `{name1}`\n│\n"
                       f"├🎬 **Resolution** : {res}\n│\n"
-                      f"├📘 **Batch Name** : `{b_name}`\n\n"
-                      f"🧸 **Extracted By** : {CR}\n\n"
+                      f"├📕 **Batch Name** : `{b_name}`\n│\n"
+                      f"├🧸 **Extracted By** : {CR}\n\n"
                 )                
                 cc1 = (             
                      f"╭━━━━━━━━━━━╮\n"
-                     f"📕Pdf ID: {str(count).zfill(3)}.\n"
+                     f"📁FILE ID: {str(count).zfill(3)}.\n"
                      f"╰━━━━━━━━━━━╯\n\n"
-                     f"📄 **Title** : `{name1}`.pdf\n"
-                     f"├📘 **Batch Name** : `{b_name}`\n\n"
-                     f"🧸 **Extracted By** : {CR}\n\n" 
+                     f"├📄 **Title** : `{name1}`.pdf\n│\n"
+                     f"├🎬 **Resolution** : {res}\n│\n"
+                     f"├📕 **Batch Name** : `{b_name}`\n│\n"
+                     f"├🧸 **Extracted By** : {CR}\n\n" 
                 )
      
                 if "drive" in url:
