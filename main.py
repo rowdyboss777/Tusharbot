@@ -238,48 +238,11 @@ async def info(bot: Client, update: Message):
         reply_markup=BUTTONS
     )
 
-
-@bot.on_message(filters.private & filters.command("id"))
-async def id(bot: Client, update: Message):
-    if update.chat.type == "channel":
-        await update.reply_text(
-            text=f"**This Channel's ID:** {update.chat.id}",
-            disable_web_page_preview=True
-        )
-    else:
-        await update.reply_text(        
-            text=f"**Your Telegram ID :** {update.from_user.id}",
-            disable_web_page_preview=True,
-            reply_markup=BUTTONS
-        )  
-
-# Command to get user ID
-@bot.on_message(filters.private & filters.command("id"))
-async def user_id(bot: Client, update: Message):
-    user = update.from_user
-    text = f"""--**User Information**--
-
-🙋 **User Name :** {user.first_name}
-🆔 **User ID :** `{user.id}`
-🔗 **Profile Link :** {user.mention}"""
-    
-    await update.reply_text(text, disable_web_page_preview=True, reply_markup=BUTTONS)
-
-# Callback handler for button
-@bot.on_callback_query()
-async def callback_handler(bot: Client, query):
-    if query.data == "bot_id":
-        bot_user = await bot.get_me()
-        await query.message.edit_text(
-            f"🤖 **Bot ID:** `{bot_user.id}`",
-            reply_markup=BUTTONS
-        )
-    elif query.data == "user_id":
-        user = query.from_user
-        await query.message.edit_text(
-            f"🙋 **User ID:** `{user.id}`",
-            reply_markup=BUTTONS
-        ) 
+@bot.on_message(filters.command(["id"]))
+async def id_command(client, message: Message):
+    chat_id = message.chat.id
+    await message.reply_text(f"**Your chat/group/channel 🆔 is : `{chat_id}`**\n\n")
+               
 
 
 @bot.on_message(filters.command('t2t'))
