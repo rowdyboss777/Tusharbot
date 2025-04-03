@@ -780,6 +780,8 @@ async def upload(bot: Client, m: Message):
         for i in range(count - 1, len(links)):
             V = links[i][1].replace("file/d/","uc?export=download&id=").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing","") # .replace("mpd","m3u8")
             url = "https://" + V
+            link0 = "https://" + V
+            urlzip = "https://video.pablocoder.eu.org/appx-zip?url=https://" + V
 
             if "visionias" in url:
                 async with ClientSession() as session:
@@ -856,12 +858,9 @@ async def upload(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:
-                from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
-                # अगर URL.zip फाइल है, तो इसे स्ट्रीमिंग लिंक में बदलें
-                if ".zip" in url:
-                      url = f"https://video.pablocoder.eu.org/appx-zip?url={url}"
-
+                
+                BUTTONSZIP = InlineKeyboardMarkup([[InlineKeyboardButton(text="ZIP VIDEO PLAYER", url=f"{urlzip}")]])
+                
                 cc = (
                       f"**⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘**\n\n"
                       f"╭━━━━━━━━━━━╮\n"
@@ -889,34 +888,8 @@ async def upload(bot: Client, m: Message):
      
                     
 
-                cczip = (
-                         f"**⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘**\n\n"
-                         f"╭━━━━━━━━━━━╮\n"
-                         f"🎥 VIDEO ID: {str(count).zfill(3)}\n"
-                         f"╰━━━━━━━━━━━╯\n\n"
-                         f"├📄 **Title** : {name1} \n│\n"
-                         f"├📕 **Batch Name** : {b_name}\n│\n"
-                         f"├🎬 **Resolution** : {res}\n│\n"
-                         f"├🧸 **Extracted By** : {CR}\n│\n"
-                         f"├🔘 Stream Video : <a href=\"{url}\">Click & Watch Video</a>\n\n"
-                         f"**⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘**\n\n"
-             )
+                
 
-# Inline Button for Streaming
-                BUTTONS = InlineKeyboardMarkup([
-                      [InlineKeyboardButton("🎥 Stream Video", url=url)]
-             ])
-
- #Send Message with Button
-                app.send_message(
-                chat_id=chat_id,  # आपका टार्गेट चैट आईडी
-                text=cczip,
-                url={url},
-                reply_markup=BUTTONS,
-                disable_web_page_preview=True
-               )
-            except Exception as e:
-                print(f"Error in sending message: {e}")
 
                    
                 if "drive" in url:
@@ -929,6 +902,15 @@ async def upload(bot: Client, m: Message):
                     except FloodWait as e:
                         await m.reply_text(str(e))
                         time.sleep(e.x)
+                        continue
+
+                elif ".zip" in url:
+                    try:
+                        await bot.send_photo(chat_id=m.chat.id, photo=zipimg, caption=cczip,reply_markup=BUTTONSZIP)
+                        count +=1
+                    except Exception as e:
+                        await m.reply_text(str(e))    
+                        time.sleep(3)    
                         continue
 
                 elif ".pdf" in url:
