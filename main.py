@@ -859,58 +859,25 @@ async def upload(bot: Client, m: Message):
 
             try:
                 
-                BUTTONSZIP = InlineKeyboardMarkup([[InlineKeyboardButton(text="🎥 Stream Video ", url=f"{urlzip}")]])
-                cczip =(
-                        f"╭━━━━━━━━━━━╮\n"    
-                        f"🎥 VIDEO ID: [{str(count).zfill(3)}]({link0})\n"
-                        f"╰━━━━━━━━━━━╯\n\n"
-                        f"├📄 **Title** : `{name1}`.zip\n│\n"
-                        f"├📕 **Batch Name** : {b_name}\n│\n"
-                        f"├🎬 **Resolution** : {res}\n│\n"
-                        f"├🧸 **Extracted By** : `{CR}`\n\n"
-                   )
-                
-                cczip1 =(
-                        f"╭━━━━━━━━━━━╮\n"    
-                        f"📁 FILE ID: [{str(count).zfill(3)}.\n"
-                        f"╰━━━━━━━━━━━╯\n\n"
-                        f"├📄 **Title** : `{name1}`.pdf\n│\n"
-                        f"├📕 **Batch Name** : {b_name}\n│\n"
-                        f"├🎬 **Resolution** : {res}\n│\n"
-                        f"├🧸 **Extracted By** : `{CR}`\n\n"
-                       
-                )
-
-                      
+                BUTTONSZIP = InlineKeyboardMarkup([[InlineKeyboardButton(text="🎥 Stream Video ", url=f"{urlzip}")]])        
                 cc = (
                       f"╭━━━━━━━━━━━╮\n"
-                      f"🎥 VIDEO ID: {str(count).zfill(3)}.\n"
+                      f"🎥VID ID: {str(count).zfill(3)}.\n"
                       f"╰━━━━━━━━━━━╯\n\n"
-                      f"├📄 **Title** : {name1}\n│\n"
-                      f"├📕 **Batch Name** : {b_name}\n│\n"
+                      f"📄 **Title** : `{name1}`\n"
                       f"├🎬 **Resolution** : {res}\n│\n"
-                      f"├🧸 **Extracted By** : {CR}\n\n"
-                   
-                )
-                
-                
+                      f"├📘 **Batch Name** : `{b_name}`\n\n"
+                      f"🧸 **Extracted By** : {CR}\n\n"
+                )                
                 cc1 = (             
                      f"╭━━━━━━━━━━━╮\n"
-                     f"📁 FILE ID: {str(count).zfill(3)}.\n"
+                     f"📕Pdf ID: {str(count).zfill(3)}.\n"
                      f"╰━━━━━━━━━━━╯\n\n"
-                     f"├📄 **Title** : {name1}.pdf\n│\n"
-                     f"├📕 **Batch Name** : {b_name}\n│\n"
-                     f"├🎬 **Resolution** : {res}\n│\n"
-                     f"├🧸 **Extracted By** : {CR}\n\n"
-                     
+                     f"📄 **Title** : `{name1}`.pdf\n"
+                     f"├📘 **Batch Name** : `{b_name}`\n\n"
+                     f"🧸 **Extracted By** : {CR}\n\n" 
                 )
      
-                    
-
-                
-
-
-                   
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -922,6 +889,22 @@ async def upload(bot: Client, m: Message):
                         await m.reply_text(str(e))
                         time.sleep(e.x)
                         continue
+
+                elif ".pdf*" in url:
+                    try:
+                        url_part, key_part = url.split("*")
+                        url = f"https://dragoapi.vercel.app/pdf/{url_part}*{key_part}"
+                        cmd = f'yt-dlp -o "{name}.pdf" "{url}"'
+                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                        os.system(download_cmd)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1)
+                        count += 1
+                        os.remove(f'{name}.pdf')
+                    except FloodWait as e:
+                        await m.reply_text(str(e))
+                        time.sleep(e.x)
+                        count += 1
+                        continue 
 
                 elif ".zip" in url:
                     try:
