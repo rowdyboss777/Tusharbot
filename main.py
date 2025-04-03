@@ -860,10 +860,18 @@ async def upload(bot: Client, m: Message):
             try:
                 
                 BUTTONSZIP = InlineKeyboardMarkup([[InlineKeyboardButton(text="ZIP VIDEO PLAYER", url=f"{urlzip}")]])
-                cczip = f'——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n📁𝐓𝐢𝐭𝐥𝐞 » `{name1}` .zip\n\n<pre><code>📚 Course : {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » `{CR}`\n'  
+                cczip =(
+                        f"╭━━━━━━━━━━━╮\n"    
+                        f"🎥 VIDEO ID: [{str(count).zfill(3)}]({link0})\n"
+                        f"╰━━━━━━━━━━━╯\n\n"
+                        f"├📄 **Title** : `{name1}`.zip\n│\n"
+                        f"├📕 **Batch Name** : {b_name}\n│\n"
+                        f"├🎬 **Resolution** : {res}\n│\n"
+                        f"├🧸 **Extracted By** : `{CR}`\n\n"
+                   )
 
+                      
                 cc = (
-                      f"**⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘**\n\n"
                       f"╭━━━━━━━━━━━╮\n"
                       f"🎥 VIDEO ID: {str(count).zfill(3)}.\n"
                       f"╰━━━━━━━━━━━╯\n\n"
@@ -871,12 +879,11 @@ async def upload(bot: Client, m: Message):
                       f"├📕 **Batch Name** : {b_name}\n│\n"
                       f"├🎬 **Resolution** : {res}\n│\n"
                       f"├🧸 **Extracted By** : {CR}\n\n"
-                      f"**⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘**\n\n"
+                   
                 )
                 
                 
-                cc1 = (
-                     f"**⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘**\n\n"
+                cc1 = (             
                      f"╭━━━━━━━━━━━╮\n"
                      f"📁 FILE ID: {str(count).zfill(3)}.\n"
                      f"╰━━━━━━━━━━━╯\n\n"
@@ -884,7 +891,7 @@ async def upload(bot: Client, m: Message):
                      f"├📕 **Batch Name** : {b_name}\n│\n"
                      f"├🎬 **Resolution** : {res}\n│\n"
                      f"├🧸 **Extracted By** : {CR}\n\n"
-                     f"**⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘**\n\n"
+                     
                 )
      
                     
