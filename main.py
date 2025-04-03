@@ -860,7 +860,8 @@ async def upload(bot: Client, m: Message):
             try:
                 
                 BUTTONSZIP = InlineKeyboardMarkup([[InlineKeyboardButton(text="ZIP VIDEO PLAYER", url=f"{urlzip}")]])
-                
+                cczip = f'——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n📁𝐓𝐢𝐭𝐥𝐞 » `{name1}` .zip\n\n<pre><code>📚 Course : {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » `{CR}`\n'  
+
                 cc = (
                       f"**⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘**\n\n"
                       f"╭━━━━━━━━━━━╮\n"
