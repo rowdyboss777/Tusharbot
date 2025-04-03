@@ -884,7 +884,7 @@ async def upload(bot: Client, m: Message):
                      f"├📕 **Batch Name** : {b_name}\n│\n"
                      f"├🎬 **Resolution** : {res}\n│\n"
                      f"├🧸 **Extracted By** : {CR}\n\n"
-                     f""**⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘**\n\n"
+                     f"**⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘**\n\n"
                 )
      
                     
