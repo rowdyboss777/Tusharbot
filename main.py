@@ -997,11 +997,13 @@ async def upload(bot: Client, m: Message):
                     
                     
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
+                    emoji_message = await show_random_emojis(message)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
                     await emoji_message.delete()
                     await helper.send_vid(bot, m, cc, filename, thumb, name, prog)
+                    await emoji_message.delete()
                     count += 1
                     time.sleep(1)
 
