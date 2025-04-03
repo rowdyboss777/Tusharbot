@@ -981,7 +981,6 @@ async def upload(bot: Client, m: Message):
                         continue
                 
                 else:
-                    emoji_message = await show_random_emojis(message)
                     progress = (count / len(links)) * 100
                     remaining_links = len(links) - count
                     Show =(  f'<pre><code>🚀 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 🚀 {progress:.2f}%</code></pre>\n\n'
