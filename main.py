@@ -369,15 +369,22 @@ async def cookies_handler(client: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(f"⚠️ An error occurred: {str(e)}")
-
 # Define paths for uploaded file and processed file
 UPLOAD_FOLDER = '/path/to/upload/folder'
 EDITED_FILE_PATH = '/path/to/save/edited_output.txt'
-
+@bot.on_message(filters.command("getcookies") & filters.private)
+async def getcookies_handler(client: Client, m: Message):
+    try:
+        # Send the cookies file to the user
+        await client.send_document(
+            chat_id=m.chat.id,
+            document=cookies_file_path,
+            caption="Here is the `youtube_cookies.txt` file."
+        )
+    except Exception as e:
+        await m.reply_text(f"⚠️ An error occurred: {str(e)}")
 @bot.on_message(filters.command('e2t'))
 async def edit_txt(client, message: Message):
-    
-
     # Prompt the user to upload the .txt file
     await message.reply_text(
         "🎉 **Welcome to the .txt File Editor!**\n\n"
