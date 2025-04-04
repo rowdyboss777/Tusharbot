@@ -56,7 +56,7 @@ except ValueError:
 ADMINS.append(OWNER)
 
 async def show_random_emojis(message):
-    emojis = ['😘', '😍', '🥰', '❤️‍🔥', '😻', '🐼', '🐬', '🐳', '🥂', '🍾', '🕊️', '🍻', '☄️', '🕊️', '🪩', '🦚','🐅','🦁']
+    emojis = ['😘', '😍', '🥰', '❤️‍🔥', '😻', '🐼', '🐬', '💗', '🥂', '🤩', '🕊️', '🍻', '🥳', '🕊️', '😇', '👻','🐅','🌟']
     emoji_message = await message.reply_text(' '.join(random.choices(emojis, k=1)))
     return emoji_message
     
@@ -132,13 +132,14 @@ keyboard = InlineKeyboardMarkup(
 # Image URLs for the random image feature
 image_urls = [
     
-    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
-    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
-    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
-    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
-    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
-    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
-    "https://graph.org/file/48fd0f6213ace4ddcf834-12d6e97b142aef2fb0.jpg",
+    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
+    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
+    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
+    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
+    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
+    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
+    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
+    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
     # Add more image URLs as needed
 ]
     
@@ -665,7 +666,7 @@ async def upload(bot: Client, m: Message):
         name_message = await bot.send_message(
             m.chat.id,
         
-            f"""<blockquote>📕 {fancy_batch_name}</blockquote>"""
+            f"""<pre>📒 {fancy_batch_name}</pre>"""
             
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
@@ -834,19 +835,19 @@ async def upload(bot: Client, m: Message):
                       f"╭━━━━━━━━━━━╮\n"
                       f"🎥VIDEO ID: {str(count).zfill(3)}.\n"
                       f"╰━━━━━━━━━━━╯\n\n"
-                      f"├📄 **Title** : `{name1}`\n│\n"
-                      f"├📕 **Batch Name** : `{b_name}`\n│\n"
-                      f"├🎬 **Resolution** : {res}\n│\n"
-                      f"├🧸 **Extracted By** : {CR}\n\n"
+                      f"📄 **Title** : `{name1}`\n\n"
+                      f"📒 **Batch Name** : `{b_name}`\n\n"
+                      f"🎬 **Resolution** : {res}\n\n"
+                      f"📥 **Extracted By** : {CR}\n\n"
                 )                
                 cc1 = (             
                      f"╭━━━━━━━━━━━╮\n"
                      f"📁FILE ID: {str(count).zfill(3)}.\n"
                      f"╰━━━━━━━━━━━╯\n\n"
-                     f"├📄 **Title** : `{name1}`.pdf\n│\n"
-                     f"├📕 **Batch Name** : `{b_name}`\n│\n"
-                     f"├🎬 **Resolution** : {res}\n│\n"
-                     f"├🧸 **Extracted By** : {CR}\n\n" 
+                     f"📄 **Title** : `{name1}`.pdf\n\n"
+                     f"📒 **Batch Name** : `{b_name}`\n\n"
+                     f"🎬 **Resolution** : {res}\n\n"
+                     f"📥 **Extracted By** : {CR}\n\n" 
                 )
      
                 if "drive" in url:
@@ -995,7 +996,7 @@ async def upload(bot: Client, m: Message):
                            f'**┠⚡ Currently on = {str(count)}\n**'
                            f'**┠⏳ Remaining links = {remaining_links}\n\n**'
                            f'**📤 𝐔𝐏𝐋𝐎𝐀𝐃𝐈𝐍𝐆! 📤**\n\n'
-                           f'<pre><code>**📕 Batch Name =** `{b_name}` (ᏒᎾᏯᎠᎽ) 🦁</code></pre>\n\n'
+                           f'<pre><code>**📒 Batch Name =** `{b_name}` (ᏒᎾᏯᎠᎽ) 🦁</code></pre>\n\n'
                            f'**⏳ Uploading Your videos may take some time**\n\n'
                            f'**╭────────◆◇◆────────╮\n⚡ MADE BY : [ᏒᎾᏯᎠᎽ 🦁](t.me/buddy_013)\n╰────────◆◇◆────────╯**\n\n')
                            
@@ -1030,7 +1031,7 @@ async def upload(bot: Client, m: Message):
     await m.reply_text(f"`🌟 𝗕𝗔𝗧𝗖𝗛 𝗦𝗨𝗠𝗠𝗔𝗥𝗬 🌟\n\n"
                        f"━━━━━━━━━━━━━━━━━━━━━━━\n"
                        f"🔢 𝗜𝗻𝗱𝗲𝘅 𝗥𝗮𝗻𝗴𝗲 : ({raw_text} to {len(links)})\n\n"
-                       f"🔖 𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 : {b_name}\n\n"
+                       f"📒 𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 : {b_name}\n\n"
                        f"━━━━━━━━━━━━━━━━━━━━━━━\n\n"
                        f"✅ STATUS: DOWNLOAD COMPLETED")
                     
