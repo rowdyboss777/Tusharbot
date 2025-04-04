@@ -248,7 +248,7 @@ async def id_command(client, message: Message):
         [[InlineKeyboardButton("📞 Contact", url="https://t.me/buddy_013")]]
     )
     await message.reply_text(
-        f"**Your group/channel 🆔 :** `{chat_id}`",
+        f"**CHANNEL ID :** `{chat_id}`",
         reply_markup=keyboard
     )
 
