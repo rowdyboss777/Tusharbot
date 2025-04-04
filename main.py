@@ -239,10 +239,19 @@ async def info(bot: Client, update: Message):
         reply_markup=BUTTONS
     )
 
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
 @bot.on_message(filters.command(["id"]))
 async def id_command(client, message: Message):
     chat_id = message.chat.id
-    await message.reply_text(f"**Your chat/group/channel 🆔 is : `{chat_id}`**\n\n")
+    keyboard = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("📞 Contact", url="https://t.me/buddy_013")]]
+    )
+    await message.reply_text(
+        f"**Your group/channel 🆔 :** `{chat_id}`",
+        reply_markup=keyboard
+    )
+
                
 
 
