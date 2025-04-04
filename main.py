@@ -666,7 +666,7 @@ async def upload(bot: Client, m: Message):
         name_message = await bot.send_message(
             m.chat.id,
         
-            f"""<pre>**📓 {fancy_batch_name}**</pre>"""
+            f"""<pre>**📗 {fancy_batch_name}**</pre>"""
             
         )
         await bot.pin_chat_message(m.chat.id, name_message.id)
@@ -836,7 +836,7 @@ async def upload(bot: Client, m: Message):
                       f"🎥VIDEO ID: {str(count).zfill(3)}.\n"
                       f"╰━━━━━━━━━━━╯\n\n"
                       f"📄 **Title** : `{name1}`\n\n"
-                      f"📓**Batch Name** : `{b_name}`\n\n"
+                      f"📗 **Batch Name** : `{b_name}`\n\n"
                       f"🎬 **Resolution** : {res}\n\n"
                       f"📥 **Extracted By** : {CR}\n\n"
                 )                
@@ -845,7 +845,7 @@ async def upload(bot: Client, m: Message):
                      f"📁FILE ID: {str(count).zfill(3)}.\n"
                      f"╰━━━━━━━━━━━╯\n\n"
                      f"📄 **Title** : `{name1}`.pdf\n\n"
-                     f"📓 **Batch Name** : `{b_name}`\n\n"
+                     f"📗 **Batch Name** : `{b_name}`\n\n"
                      f"🎬 **Resolution** : {res}\n\n"
                      f"📥 **Extracted By** : {CR}\n\n" 
                 )
@@ -1031,7 +1031,7 @@ async def upload(bot: Client, m: Message):
     await m.reply_text(f"`🌟 𝗕𝗔𝗧𝗖𝗛 𝗦𝗨𝗠𝗠𝗔𝗥𝗬 🌟\n\n"
                        f"━━━━━━━━━━━━━━━━━━━━━━━\n"
                        f"🔢 𝗜𝗻𝗱𝗲𝘅 𝗥𝗮𝗻𝗴𝗲 : ({raw_text} to {len(links)})\n\n"
-                       f"<pre>📓 𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 : {b_name}<\pre>\n\n"
+                       f"<pre>📗 𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲 : {b_name}<\pre>\n\n"
                        f"━━━━━━━━━━━━━━━━━━━━━━━\n\n"
                        f"✅ STATUS: DOWNLOAD COMPLETED")
                     
