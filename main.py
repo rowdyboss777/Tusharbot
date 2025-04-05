@@ -1,4 +1,4 @@
-import os
+allimport os
 import re
 import sys
 import json
@@ -720,13 +720,13 @@ async def upload(bot: Client, m: Message):
     
     
 
-    await editable.edit("**Enter A Caption To Add Otherwise Send `no`\n**")
+    await editable.edit("**Enter Your Name\nOtherwise send d**")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
     # Default credit message
     credit = "️ᏒᎾᏯᎠᎽ"
-    if raw_text3 == '1':
+    if raw_text3 == 'd':
         CR = 'ᏒᎾᏯᎠᎽ'
     elif raw_text3:
         CR = raw_text3
