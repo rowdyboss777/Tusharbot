@@ -612,6 +612,36 @@ async def help_command(client: Client, msg: Message):
     )
     await msg.reply_text(help_text)
 
+@bot.on_message(filters.command("plan"))
+async def help_command(client: Client, msg: Message):
+    help_text = (
+        "<pre> 🎉 Welcome to DRM Bot! 🎉 </pre>\n\n"
+        "You can have access to download all Non-DRM+AES Encrypted URLs 🔐 including:\n\n"
+        "• </blockquote>📚 Appx Zip+Encrypted Url</blockquote>\n"
+        "• 🎓 Classplus DRM+ NDRM\n"
+        "• 🧑‍🏫 PhysicsWallah DRM\n"
+        "• 📚 CareerWill + PDF\n"
+        "• 🎓 Khan GS\n"
+        "• 🎓 Study Iq DRM\n"
+        "• 🚀 APPX + APPX Enc PDF\n"
+        "• 🎓 Vimeo Protection\n"
+        "• 🎓 Brightcove Protection\n"
+        "• 🎓 Visionias Protection\n"
+        "• 🎓 Zoom Video\n"
+        "• 🎓 Utkarsh Protection(Video + PDF)\n"
+        "• 🎓 All Non DRM+AES Encrypted URLs\n"
+        "• 🎓 MPD URLs if the key is known (e.g., Mpd_url?key=key XX:XX)\n\n"
+        "🚀 You are not subscribed to any plan yet!\n"
+    )
+
+    buttons = InlineKeyboardMarkup(
+        [[InlineKeyboardButton(" Buy Membership 🎉", url="https://t.me/buddy_013")]]
+    )
+
+    await msg.reply_text(help_text, reply_markup=buttons)
+
+
+
 # Upload command handler
 @bot.on_message(filters.command(["Rowdy"]))
 async def upload(bot: Client, m: Message):
