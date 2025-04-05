@@ -132,14 +132,14 @@ keyboard = InlineKeyboardMarkup(
 # Image URLs for the random image feature
 image_urls = [
     
-    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
-    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
-    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
-    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
-    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
-    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
-    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
-    "https://graph.org/file/bbe7900be02423d332ed6-dadef473edeeb4c116.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
+    "https://graph.org/file/043746948ffaa41e2880d-e4039e74b6834b0e5c.jpg",
     # Add more image URLs as needed
 ]
     
@@ -750,7 +750,7 @@ async def upload(bot: Client, m: Message):
     
     
 
-    await editable.edit("**Enter Your Name\nOtherwise send d**")
+    await editable.edit("**Enter Your Name `no` Otherwise send `d`**")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
